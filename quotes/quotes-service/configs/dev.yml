@@ -1,0 +1,8 @@
+logging:
+  level: INFO
+  loggers:
+    com.pago.core: DEBUG
+
+dynamodb:
+  table: quotes-dev
+  region: us-east-2

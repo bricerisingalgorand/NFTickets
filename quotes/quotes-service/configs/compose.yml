@@ -1,0 +1,9 @@
+logging:
+  level: INFO
+  loggers:
+    com.pago.core: DEBUG
+
+dynamodb:
+  endpoint: http://dynamodb:8000
+  table: quotes-local
+  region: us-east-2

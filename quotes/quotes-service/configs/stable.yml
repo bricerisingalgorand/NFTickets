@@ -1,0 +1,13 @@
+logging:
+  level: INFO
+  loggers:
+    com.pago.core: DEBUG
+
+dynamodb:
+  table: quotes-stable
+  region: us-east-1
+
+cors:
+  allowedOrigins: "*"
+  allowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"
+  allowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"

@@ -1,0 +1,54 @@
+version: "3"
+services:
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    hostname: dynamodb
+    ports:
+      - 8000:8000
+    command: -jar DynamoDBLocal.jar -sharedDb
+  quotes:
+    image: openjdk:11
+    depends_on:
+      - dynamodb
+      - bootstrap
+    environment:
+      AWS_ACCESS_KEY_ID: local
+      AWS_SECRET_ACCESS_KEY: local
+      DYNAMODB_ENDPOINT: http://dynamodb:8000
+      LIFECYCLE: compose
+    ports:
+      - '8080'
+      - 5005:5005
+    volumes:
+      - ./quotes-service/configs:/project/configs
+      - ./quotes-service/target:/project/target
+    command: java -jar /project/target/quotes-service.jar server /project/configs/local.yml
+  swagger:
+    image: swaggerapi/swagger-ui
+    ports:
+      - 8082:8080
+    depends_on:
+      - 'quotes'
+    environment:
+      URL: http://localhost:8080/openapi.json
+  easy-cors:
+    image: pagoservices/easy-cors:latest
+    depends_on:
+      - 'quotes'
+    environment:
+      SERVICE_NAME: quotes
+      SERVICE_PORT: '8080'
+    ports:
+      - 8080:80
+  bootstrap:
+    depends_on:
+      - dynamodb
+    image: pagoservices/deployer:latest
+    environment:
+      AWS_ACCESS_KEY_ID: local
+      AWS_SECRET_ACCESS_KEY: local
+      APPLICATION_NAME: quotes
+    volumes:
+      - ./cicd/terraform:/project/terraform
+    working_dir: /project/terraform/database
+    command: /scripts/tf-bootstrap.sh

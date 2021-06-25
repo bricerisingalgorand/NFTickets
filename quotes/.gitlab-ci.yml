@@ -1,0 +1,29 @@
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - .m2/repository
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+build:
+  image: pagoservices/deployer:latest
+  variables:
+    DOCKER_DRIVER: overlay
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - cicd build
+    - cicd publish -l dev
+
+deploy:
+  image: pagoservices/deployer:latest
+  stage: deploy
+  script:
+    - cicd deploy -r application -l dev
+  only:
+    - master

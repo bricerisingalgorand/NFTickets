@@ -1,0 +1,18 @@
+# java/maven files
+target
+dependency-reduced-pom.xml
+*.iml
+
+# IDE files
+.idea
+
+# terraform
+.terraform
+.terraform*
+*.tfstate*
+*-backend.tf
+
+# Swagger
+quotes-service/src/main/resources/swagger-ui/
+
+tmp

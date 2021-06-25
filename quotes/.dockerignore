@@ -1,0 +1,16 @@
+# java/maven files
+target
+dependency-reduced-pom.xml
+*.iml
+
+# IDE files
+.idea
+
+# Automation
+cicd
+.gitlab-ci.yml
+
+# etc
+*.md
+.gitignore
+Dockerfile

@@ -1,0 +1,30 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+  <profiles>
+    <profile>
+      <id>pago</id>
+      <repositories>
+        <repository>
+          <id>gitlab-maven</id>
+          <url>https://gitlab.com/api/v4/projects/23409957/packages/maven</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <servers>
+    <server>
+      <id>gitlab-maven</id>
+      <configuration>
+        <httpHeaders>
+          <property>
+            <name>Private-Token</name>
+            <value>${env.GITLAB_PACKAGE_CRED}</value>
+          </property>
+        </httpHeaders>
+      </configuration>
+    </server>
+  </servers>
+  <activeProfiles>
+    <activeProfile>pago</activeProfile>
+  </activeProfiles>
+</settings>
