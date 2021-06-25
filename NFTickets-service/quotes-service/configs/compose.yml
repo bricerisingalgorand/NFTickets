@@ -3,7 +3,10 @@ logging:
   loggers:
     com.pago.core: DEBUG
 
-dynamodb:
-  endpoint: http://dynamodb:8000
-  table: quotes-local
-  region: us-east-2
+database:
+  properties:
+    hibernate.hbm2ddl.auto: create
+  driverClass: org.postgresql.Driver
+  user: postgres
+  password: mysecretpassword
+  url: jdbc:postgresql://localhost:5432/

@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Table(name = "quotes")
+@Entity
 public class QuoteItem {
 
     public QuoteItem() {}

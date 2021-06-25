@@ -20,7 +20,7 @@ public class QuoteService {
         quoteTableService.saveQuote(quote);
     }
 
-    public QuoteItem getQuote(String id) {
+    public QuoteItem getQuote(Long id) {
         return quoteTableService.getQuote(id);
     }
 

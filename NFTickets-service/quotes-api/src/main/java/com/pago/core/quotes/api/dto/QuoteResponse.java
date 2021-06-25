@@ -6,7 +6,7 @@ import lombok.Data;
 public class QuoteResponse {
     private String quote;
     private String createDate;
-    private String id;
+    private Long id;
 
     public QuoteResponse() {}
 }

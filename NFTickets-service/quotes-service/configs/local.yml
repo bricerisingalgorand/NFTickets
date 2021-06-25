@@ -1,9 +1,0 @@
-logging:
-  level: INFO
-  loggers:
-    com.pago.core: DEBUG
-
-dynamodb:
-  endpoint: http://dynamodb-local.local.svc.cluster.local:8000
-  table: quotes-local
-  region: us-east-2
