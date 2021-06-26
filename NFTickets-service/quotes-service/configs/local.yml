@@ -4,7 +4,10 @@ logging:
     com.pago.core: DEBUG
 
 database:
+  #properties:
+  # hibernate.hbm2ddl.auto: create
   driverClass: org.postgresql.Driver
   user: postgres
   password: mysecretpassword
   url: jdbc:postgresql://postgres:5432/
+
