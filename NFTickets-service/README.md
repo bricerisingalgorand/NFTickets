@@ -14,6 +14,7 @@ docker-compose setup
 1. Run `mvn clean install` to build your application
 2. Run `docker-compose up -d` to start the app
 3. To check that your application is running enter url `http://localhost:8080`
+4. See swagger ui on `http://localhost:8082/`
 
 Health Check
 ---
