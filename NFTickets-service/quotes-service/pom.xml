@@ -69,10 +69,6 @@
             <artifactId>dropwizard-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.dropwizard</groupId>
-            <artifactId>dropwizard-migrations</artifactId>
-        </dependency>
-        <dependency>
             <groupId>ru.vyarus</groupId>
             <artifactId>dropwizard-guicey</artifactId>
             <version>5.1.0</version>

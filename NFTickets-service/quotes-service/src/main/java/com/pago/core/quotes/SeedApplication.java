@@ -36,12 +36,7 @@ public class SeedApplication extends Application<SeedApplicationConfiguration> {
     public void initialize(final Bootstrap<SeedApplicationConfiguration> bootstrap) {
         final DaoBundle daoBundle = new DaoBundle();
         bootstrap.addBundle(daoBundle);
-        bootstrap.addBundle(new MigrationsBundle<SeedApplicationConfiguration>() {
-            @Override
-            public DataSourceFactory getDataSourceFactory(SeedApplicationConfiguration configuration) {
-                return configuration.getDataSourceFactory();
-            }
-        });
+        bootstrap.addBundle(new SchemaBundle());
         bootstrap.addBundle(GuiceBundle.builder()
                 .enableAutoConfig("com.pago.core.quotes")
                 .modules(
