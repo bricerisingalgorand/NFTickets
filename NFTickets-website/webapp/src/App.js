@@ -15,20 +15,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import About from './pages/About'
-import Projects from './pages/Projects'
-import Project from './pages/Project'
+import Browse from './pages/Browse'
 import Register from './pages/Register'
+import Event from './pages/Event'
+import Checkout from './pages/Checkout'
 
 function App(props) {
   return (
     <Router>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">Ignite</Navbar.Brand>
+        <Navbar.Brand href="/">NFTickets</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/projects">Projects</Nav.Link>
-            <Nav.Link href="/register">Register</Nav.Link>
+            <Nav.Link href="/register">Register Events</Nav.Link>
+            <Nav.Link href="/browse">Browse</Nav.Link>
+            <Nav.Link href="/Event">Event</Nav.Link>
+            <Nav.Link href="/Checkout">Checkout</Nav.Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -40,15 +43,21 @@ function App(props) {
         <Route exact path="/">
           <About />
         </Route>
-        <Route path="/projects">
-          <Projects />
-        </Route>
         <Route path="/register">
           <Register />
         </Route>
-        <Route exact path="/project/:projectId">
-          <Project />
+        <Route path="/browse">
+          <Browse />
         </Route>
+        <Route path="/event">
+          <Event />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
+        </Route>
+        {/* <Route exact path="/project/:projectId">
+          <Project />
+        </Route> */}
       </Switch>
     </Router>
   );

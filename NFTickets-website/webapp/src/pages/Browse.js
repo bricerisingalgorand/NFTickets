@@ -24,14 +24,15 @@ export default function About(props) {
 
   return (
     <Container>
-      <h1 className="pt-2">
-        Projects
+      <h1 className="pt-2" style={{textAlign: "center"}}>
+        Available Events
       </h1>
       <Table responsive>
         <thead>
         <tr>
-          <th>Name</th>
-          <th>Goal</th>
+          <th>Event</th>
+          <th>Location</th>
+          <th>Date/Time</th>
         </tr>
         </thead>
         <tbody>

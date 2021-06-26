@@ -69,7 +69,7 @@ export default function About(props) {
             <Form.Control type="location" placeholder="Enter limit" />
           </Form.Group>
         </Form.Row>
-        <Form.Label>Seating Details</Form.Label>
+        <Form.Label>Ticket Details</Form.Label>
         <Form.Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEventName">
             <Form.Control type="number" placeholder="Enter row/zone" />
