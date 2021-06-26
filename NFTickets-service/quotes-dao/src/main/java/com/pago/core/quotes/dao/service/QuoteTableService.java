@@ -5,6 +5,8 @@ import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 
 import javax.inject.Inject;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public class QuoteTableService extends AbstractDAO<QuoteItem> {
@@ -19,7 +21,7 @@ public class QuoteTableService extends AbstractDAO<QuoteItem> {
     }
 
     public List<QuoteItem> getQuotes() {
-        return list(query("select *"));
+        return list(query("from quotes"));
     }
 
     public QuoteItem getQuote(Long id) {
