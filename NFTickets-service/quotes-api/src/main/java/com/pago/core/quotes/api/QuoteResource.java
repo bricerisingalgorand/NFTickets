@@ -22,7 +22,6 @@ public interface QuoteResource {
     @Path("/")
     @Timed
     public Page<QuoteResponse> getQuotes(
-        @QueryParam("createDate") String createDate,
         @QueryParam("page_number") @DefaultValue("0") Integer pageNumber,
         @QueryParam("page_size") @DefaultValue("10") Integer pageSize
     );
@@ -30,5 +29,5 @@ public interface QuoteResource {
     @GET
     @Path("/{id}")
     @Timed
-    public QuoteResponse getQuote(@NotNull @PathParam("id") String id);
+    public QuoteResponse getQuote(@NotNull @PathParam("id") Long id);
 }

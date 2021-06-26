@@ -1,20 +1,18 @@
 version: "3"
 services:
-  dynamodb:
-    image: amazon/dynamodb-local:latest
-    hostname: dynamodb
+  postgres:
+    image: postgres:latest
+    hostname: postgres
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
     ports:
-      - 8000:8000
-    command: -jar DynamoDBLocal.jar -sharedDb
+      - 5432:5432
   quotes:
     image: openjdk:11
     depends_on:
-      - dynamodb
+      - postgres
       - bootstrap
     environment:
-      AWS_ACCESS_KEY_ID: local
-      AWS_SECRET_ACCESS_KEY: local
-      DYNAMODB_ENDPOINT: http://dynamodb:8000
       LIFECYCLE: compose
     ports:
       - '8080'
@@ -22,7 +20,7 @@ services:
     volumes:
       - ./quotes-service/configs:/project/configs
       - ./quotes-service/target:/project/target
-    command: java -jar /project/target/quotes-service.jar server /project/configs/local.yml
+    command: java -jar /project/target/quotes-service.jar server /project/configs/compose.yml
   swagger:
     image: swaggerapi/swagger-ui
     ports:
@@ -41,14 +39,12 @@ services:
     ports:
       - 8080:80
   bootstrap:
+    image: openjdk:11
     depends_on:
-      - dynamodb
-    image: pagoservices/deployer:latest
+      - postgres
     environment:
-      AWS_ACCESS_KEY_ID: local
-      AWS_SECRET_ACCESS_KEY: local
-      APPLICATION_NAME: quotes
+      LIFECYCLE: compose
     volumes:
-      - ./cicd/terraform:/project/terraform
-    working_dir: /project/terraform/database
-    command: /scripts/tf-bootstrap.sh
+      - ./quotes-service/configs:/project/configs
+      - ./quotes-service/target:/project/target
+    command: java -jar /project/target/quotes-service.jar db migrate /project/configs/compose.yml

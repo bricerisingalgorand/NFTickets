@@ -2,9 +2,14 @@ package com.pago.core.quotes;
 
 import com.pago.core.quotes.api.util.DozerModule;
 import com.pago.core.quotes.config.*;
+import com.pago.core.quotes.dao.config.DaoBundle;
+import com.pago.core.quotes.dao.config.DaoModule;
+import com.pago.core.quotes.dao.config.SchemaBundle;
 import com.pago.core.quotes.module.HealthcheckModule;
 import com.pago.core.quotes.service.ApplicationHealthCheck;
 import io.dropwizard.Application;
+import io.dropwizard.db.DataSourceFactory;
+import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
@@ -29,9 +34,13 @@ public class SeedApplication extends Application<SeedApplicationConfiguration> {
 
     @Override
     public void initialize(final Bootstrap<SeedApplicationConfiguration> bootstrap) {
+        final DaoBundle daoBundle = new DaoBundle();
+        bootstrap.addBundle(daoBundle);
+        bootstrap.addBundle(new SchemaBundle());
         bootstrap.addBundle(GuiceBundle.builder()
                 .enableAutoConfig("com.pago.core.quotes")
                 .modules(
+                        new DaoModule(daoBundle),
                         new HealthcheckModule(),
                         new DozerModule()
                 ).build()

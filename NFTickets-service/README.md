@@ -4,8 +4,17 @@ How to start the quotes application
 ---
 
 1. Run `mvn clean install` to build your application
-1. Start application with `java -jar target/quotes.jar server config/dev.yml`
-1. To check that your application is running enter url `http://localhost:8080`
+2. Get a postgres instance running at localhost:5432 `docker run -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres`
+3. Start application with `java -jar target/quotes.jar server config/local.yml`
+4. To check that your application is running enter url `http://localhost:8080`
+
+docker-compose setup
+---
+
+1. Run `mvn clean install` to build your application
+2. Run `docker-compose up -d` to start the app
+3. To check that your application is running enter url `http://localhost:8080`
+4. See swagger ui on `http://localhost:8082/`
 
 Health Check
 ---

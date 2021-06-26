@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Data
-@Table(name = "quotes")
+@Entity(name = "quotes")
 public class QuoteItem {
 
     public QuoteItem() {}

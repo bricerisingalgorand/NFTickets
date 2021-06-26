@@ -3,7 +3,8 @@ logging:
   loggers:
     com.pago.core: DEBUG
 
-dynamodb:
-  endpoint: http://dynamodb:8000
-  table: quotes-local
-  region: us-east-2
+database:
+  driverClass: org.postgresql.Driver
+  user: postgres
+  password: mysecretpassword
+  url: jdbc:postgresql://postgres:5432/
