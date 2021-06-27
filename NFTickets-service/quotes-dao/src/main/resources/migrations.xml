@@ -15,5 +15,58 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <createTable tableName="events">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="createtime" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="starttime" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="endtime" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="performance">
+            <column name="eventid" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="venue">
+            <column name="eventid" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="zones">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="eventid" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="seats" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
