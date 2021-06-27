@@ -9,9 +9,6 @@ import java.math.BigInteger;
 @Data
 @Embeddable
 public class ZoneItem {
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    //private Long id;
     @NotNull
     @Column(name = "name", table = "zones")
     private String name;
