@@ -6,19 +6,13 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Data
-@Entity(name = "performance")
+@Embeddable
 public class PerformanceItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @NotNull
-    @Column(name = "eventId")
-    private Long eventId;
-    @NotNull
-    @Column(name = "name")
+    @Column(name = "name", table = "performance")
     private String name;
     @NotNull
-    @Column(name = "description")
+    @Column(name = "description", table = "performance")
     private String description;
 
     public PerformanceItem() {}

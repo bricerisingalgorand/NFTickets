@@ -7,22 +7,19 @@ import javax.validation.constraints.NotNull;
 import java.math.BigInteger;
 
 @Data
-@Entity(name = "zone")
+@Embeddable
 public class ZoneItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //private Long id;
     @NotNull
-    @Column(name = "eventId")
-    private Long eventId;
-    @NotNull
-    @Column(name = "name")
+    @Column(name = "name", table = "zones")
     private String name;
     @NotNull
-    @Column(name = "seats")
+    @Column(name = "seats", table = "zones")
     private Integer seats;
     @NotNull
-    @Column(name = "price")
+    @Column(name = "price", table = "zones")
     private BigInteger price;
 
     public ZoneItem() {}

@@ -30,9 +30,6 @@
             </column>
         </createTable>
         <createTable tableName="performance">
-            <column name="id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
             <column name="eventid" type="bigint">
                 <constraints nullable="false"/>
             </column>
@@ -44,9 +41,6 @@
             </column>
         </createTable>
         <createTable tableName="venue">
-            <column name="id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
             <column name="eventid" type="bigint">
                 <constraints nullable="false"/>
             </column>
@@ -57,7 +51,7 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        <createTable tableName="zone">
+        <createTable tableName="zones">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

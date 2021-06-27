@@ -16,13 +16,10 @@ public class EventService {
 
     public void save(EventItem event) {
         eventTableService.save(event);
-        event.getPerformance().setEventId(event.getId());
-        performanceTableService.save(event.getPerformance());
     }
 
     public EventItem getEvent(Long id) {
         EventItem event = eventTableService.getEvent(id);
-        event.setPerformance(performanceTableService.getPerformance(event.getId()));
         return event;
     }
 
