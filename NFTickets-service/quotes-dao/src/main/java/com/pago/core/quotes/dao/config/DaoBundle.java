@@ -8,7 +8,6 @@ public class DaoBundle extends HibernateBundle<DaoConfiguration> {
 
     public DaoBundle() {
         super(
-                QuoteItem.class,
                 EventItem.class,
                 PerformanceItem.class,
                 VenueItem.class,
