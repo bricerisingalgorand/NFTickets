@@ -36,4 +36,9 @@ public class EventItem {
     private List<ZoneItem> zones;
 
     public EventItem() {}
+
+    @PrePersist
+    protected void onCreate() {
+        createTime = DateTime.now();
+    }
 }
