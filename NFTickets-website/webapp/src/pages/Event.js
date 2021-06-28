@@ -3,7 +3,7 @@ import {
   Container, Col,
   Button, Form, Row
 } from "react-bootstrap";
-import {useParams} from "react-router-dom";
+import {useParams, withRouter} from "react-router-dom";
 const eventService = require('../services/eventService.js')
 
 export default function Event(props) {
@@ -22,16 +22,16 @@ export default function Event(props) {
 
   useEffect(() => {
     // call api to fetch details
-    // projectId is the projectId
+    // eventId is the eventId
     eventService.getEvent(eventId, (data, err) => {
       if (err) {
         console.log(err)
       } else {
         console.log(data)
-        setName(data.performance.name)
-        setDesc(data.performance.description)
+        setName(data['performance.name'])
+        setDesc(data['performance.description'])
         setTime(data.startTime)
-        setVenue(data.venue.name)
+        setVenue(data['venue.name'])
         setZones(data.zones)
       }
     })
