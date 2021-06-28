@@ -31,7 +31,7 @@ export default function Event(props) {
         setDesc(data.performance.description)
         setTime(data.startTime)
         setVenue(data.venue.name)
-        setZones(JSON.parse(JSON.stringify(data.zones)))
+        setZones(data.zones)
       }
     })
   }, []);
