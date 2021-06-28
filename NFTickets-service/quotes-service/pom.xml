@@ -94,6 +94,16 @@
             <scope>system</scope>
             <systemPath>${project.build.directory}/transactiongateway-client.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.algorand</groupId>
+            <artifactId>algosdk</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.spullara.mustache.java</groupId>
+            <artifactId>compiler</artifactId>
+            <version>0.9.4</version>
+        </dependency>
     </dependencies>
 
     <build>

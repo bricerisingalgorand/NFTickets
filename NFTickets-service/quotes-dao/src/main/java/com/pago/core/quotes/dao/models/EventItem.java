@@ -26,6 +26,9 @@ public class EventItem {
     @NotNull
     @Column(name = "endTime")
     private DateTime endTime;
+    @NotNull
+    @Column(name = "eventOwnerAccount")
+    private String eventOwnerAccount;
 
     @Embedded
     private PerformanceItem performance;

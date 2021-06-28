@@ -1,0 +1,426 @@
+#pragma version 2
+int 0
+txn ApplicationID
+==
+bnz creation
+int OptIn
+txn OnCompletion
+==
+bnz finished
+
+txna ApplicationArgs 1
+btoi
+int 32768
+>
+bnz failed
+
+//get bank byte bit
+txna ApplicationArgs 1
+btoi
+int 1
+-
+dup
+store 1
+int 512
+/
+store 2 // 0 - 63 global loc
+load 1
+int 512
+%
+int 8
+/
+store 20 // byte
+load 1
+int 8
+%
+store 30 //bit
+byte "bank"
+load 2
+itob
+int 7 // by default teal uses 8 bytes for int, we just want the last byte
+int 8
+substring3
+concat
+store 5
+int 0
+load 5
+app_global_get_ex
+bnz global_initialized //write all zeros into the bank (0-63) if not initialized yet
+load 5
+int 0
+itob
+dup
+concat
+dup
+concat
+dup
+concat
+app_global_put
+global_initialized:
+pop
+
+// pull out current value of the existing byte that is going to change
+load 20
+int 1
++
+store 21 //seting up cat range
+load 5
+app_global_get
+dup
+store 10
+load 20
+load 21
+substring3 // get the byte
+btoi
+store 40 //store my current int value "b"
+
+
+//generate ticket number
+//based on string ticket-bank-byte-bit
+byte "ticket"
+load 2
+itob
+int 7
+int 8
+substring3
+concat
+byte "-"
+concat
+load 20
+itob
+int 7
+int 8
+substring3
+concat
+byte "-"
+concat
+load 30
+itob
+int 7
+int 8
+substring3
+concat
+store 50
+
+
+//store 40 has current word value that we are changing
+
+//7th bit
+load 30 //
+int 7
+==
+bz not_7
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_7
+load 40 // get current byte value
+int 128
+&
+bnz failed
+load 40
+int 128
+|
+store 40
+b write_update
+sell_7:
+load 40 // get current byte value
+int 128
+&
+bz failed
+load 40
+int 128
+^
+store 40
+b write_update
+not_7:
+
+
+//6th bit
+load 30 //
+int 6
+==
+bz not_6
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_6
+load 40 // get current byte value
+int 64
+&
+bnz failed
+load 40
+int 64
+|
+store 40
+b write_update
+sell_6:
+load 40 // get current byte value
+int 64
+&
+bz failed
+load 40
+int 64
+^
+store 40
+b write_update
+not_6:
+
+//5th bit
+load 30 //
+int 5
+==
+bz not_5
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_5
+load 40 // get current byte value
+int 32
+&
+bnz failed
+load 40
+int 32
+|
+store 40
+b write_update
+sell_5:
+load 40 // get current byte value
+int 32
+&
+bz failed
+load 40
+int 32
+^
+store 40
+b write_update
+not_5:
+
+//4th bit
+load 30 //
+int 4
+==
+bz not_4
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_4
+load 40 // get current byte value
+int 16
+&
+bnz failed
+load 40
+int 16
+|
+store 40
+b write_update
+sell_4:
+load 40 // get current byte value
+int 16
+&
+bz failed
+load 40
+int 16
+^
+store 40
+b write_update
+not_4:
+
+//3rd bit
+load 30 //
+int 3
+==
+bz not_3
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_3
+load 40 // get current byte value
+int 8
+&
+bnz failed
+load 40
+int 8
+|
+store 40
+b write_update
+sell_3:
+load 40 // get current byte value
+int 8
+&
+bz failed
+load 40
+int 8
+^
+store 40
+b write_update
+not_3:
+
+//2nd bit
+load 30 //
+int 2
+==
+bz not_2
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_2
+load 40 // get current byte value
+int 4
+&
+bnz failed
+load 40
+int 4
+|
+store 40
+b write_update
+sell_2:
+load 40 // get current byte value
+int 4
+&
+bz failed
+load 40
+int 4
+^
+store 40
+b write_update
+not_2:
+
+//1st bit
+load 30 //
+int 1
+==
+bz not_1
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_1
+load 40 // get current byte value
+int 2
+&
+bnz failed
+load 40
+int 2
+|
+store 40
+b write_update
+sell_1:
+load 40 // get current byte value
+int 2
+&
+bz failed
+load 40
+int 2
+^
+store 40
+b write_update
+not_1:
+
+//0th bit
+load 30 //
+int 0
+==
+bz not_0
+txna ApplicationArgs 0
+byte "buy"
+==
+bz sell_0
+load 40 // get current byte value
+int 1
+&
+bnz failed
+load 40
+int 1
+|
+store 40
+b write_update
+sell_0:
+load 40 // get current byte value
+int 1
+&
+bz failed
+load 40
+int 1
+^
+store 40
+b write_update
+not_0:
+
+int 0
+return
+
+//write update
+//pull out current byte and rewrite all 64 bytes in that bank
+// Each byte is going to have a value from 0-255
+write_update:
+load 40 // new int val 0-255 for byte
+itob
+int 7
+int 8
+substring3
+store 11
+load 10 //current bank value
+int 0
+load 20
+substring3
+store 12
+load 10
+load 21
+int 64
+substring3
+store 13
+load 12
+load 11
+concat
+load 13
+concat
+store 14
+load 5
+load 14
+app_global_put
+
+//need to store ticketnumber to local storage
+//this should allow 16 tickets per person
+//txna ApplicationArgs 0
+//byte "buy"
+//==
+///bz sell_dl
+//int 0 //sender
+//txn ApplicationID
+//load 50
+//app_local_get_ex
+//bnz failed_pop
+//int 0 //sender
+//load 50
+//int 1
+//app_local_put
+//int 1
+//return
+//sell_dl:
+//int 0 //sender
+//txn ApplicationID
+//load 50
+//app_local_get_ex
+//bz failed
+//int 0
+//load 50
+//app_local_del
+//int 1
+//return
+//delete these
+int 1
+return
+creation:
+
+int 1
+return
+finished:
+int 1
+return
+failed:
+int 0
+return
+failed_pop:
+pop
+int 0
+return
