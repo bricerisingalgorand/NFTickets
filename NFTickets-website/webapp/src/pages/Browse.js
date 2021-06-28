@@ -16,7 +16,8 @@ export default function Browse(props) {
       if (err) {
         console.log(err)
       } else {
-        setEvents(data)
+        console.log(data.contents)
+        setEvents(data.contents)
       }
     })
   }, []);
@@ -36,10 +37,10 @@ export default function Browse(props) {
         </tr>
         </thead>
         <tbody>
-        {events.map((event) => {
+        {Array.from(events).map((event) => {
           return (
             <tr>
-              <td><a href={`/browse/${event.id}`}>{event.performance.name}</a></td>
+              <td><a href={`/browse/${event.id}`}>{event['performance.name']}</a></td>
               <td>{event.venue}</td>
               <td>{event.startTime}</td>
             </tr>
