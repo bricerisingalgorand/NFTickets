@@ -4,7 +4,7 @@ const APP_SERVICE_URL = 'http://localhost:8080'
 const getEvent = function (eventId, callback) {
   axios.get(`${APP_SERVICE_URL}/event/${eventId}`).then(
     (result) => {
-      callback(JSON.flatten(JSON.parse(JSON.stringify(result.data))), null);
+      callback(JSON.parse(JSON.stringify(result.data)), null);
     })
     .catch((error) => {
       callback(null, error);

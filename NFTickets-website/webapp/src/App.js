@@ -42,6 +42,9 @@ function App(props) {
         <Route path="/register">
           <Register />
         </Route>
+        <Route exact path="/browse/:eventId">
+          <Event />
+        </Route>
         <Route path="/browse">
           <Browse />
         </Route>
@@ -51,9 +54,6 @@ function App(props) {
         <Route path="/checkout">
           <Checkout />
         </Route>
-        {/* <Route exact path="/project/:projectId">
-          <Project />
-        </Route> */}
       </Switch>
     </Router>
   );
