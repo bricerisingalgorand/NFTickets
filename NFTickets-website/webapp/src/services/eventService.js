@@ -1,4 +1,6 @@
 const axios = require('axios')
+var JSONbig = require('json-bigint');
+
 const APP_SERVICE_URL = 'http://localhost:8080'
 
 const getEvent = function (eventId, callback) {
@@ -86,6 +88,17 @@ const createEvent = function (event, callback) {
     .catch((error) => {
       callback(null, error);
     });
+}
+
+const eventBuilder = function (name, description, venue, venueDesc, startTime, endTime, ticketDetail, ticketLimit, zones) {
+  return JSONbig.stringify({
+    createTime: new Date.now(),
+    startTime: new Date(startTime).toISOString(),
+    endTime: new Date(endTime).toISOString(),
+    performance: {name: name, description: description},
+    venue: {name:venue, description: venueDesc},
+    zones: zones
+  });
 }
 
 module.exports = {

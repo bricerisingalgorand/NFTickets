@@ -3,7 +3,7 @@ import {
   Container, Col,
   Button, Form
 } from "react-bootstrap";
-const fundService = require('../services/fundService.js')
+const eventService = require('../services/eventService.js')
 
 export default function Register(props) {
   const [name, setName] = useState("");
@@ -17,8 +17,8 @@ export default function Register(props) {
   function onSubmit(e) {
     e.preventDefault();
     console.log(name, desc, goal, acct, time) // use these as fields
-    const fund = fundService.fundBuilder(name, desc, parseInt(time), parseInt(goal), acct);
-    fundService.createFund(fund, ()=>{});
+
+    // eventService.createEvent(fund, ()=>{});
   }
 
   return (
