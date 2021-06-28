@@ -13,7 +13,7 @@ export default function Event(props) {
   const [desc, setDesc] = useState("");
   const [venue, setVenue] = useState("");
   const [time, setTime] = useState("");
-  const [zones, setZones] = useState("");
+  const [zones, setZones] = useState([]);
 
   function onSubmit(e) {
     e.preventDefault();
@@ -27,15 +27,14 @@ export default function Event(props) {
       if (err) {
         console.log(err)
       } else {
-        console.log(data)
-        setName(data['performance.name'])
-        setDesc(data['performance.description'])
+        setName(data.performance.name)
+        setDesc(data.performance.description)
         setTime(data.startTime)
-        setVenue(data['venue.name'])
-        setZones(data.zones)
+        setVenue(data.venue.name)
+        setZones(JSON.parse(JSON.stringify(data.zones)))
       }
     })
-  });
+  }, []);
 
   return (
     <Container>
@@ -66,8 +65,8 @@ export default function Event(props) {
         <Form.Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEventName">
                 <Form.Control as="select" defaultValue="Select Zone...">
-                    {zones.map((zone) => {
-                        return <option>{zone}</option>
+                    {Array.from(zones).map((zone) => {
+                        return <option>{zone.name}</option>
                     })}
                 </Form.Control>
             </Form.Group>
