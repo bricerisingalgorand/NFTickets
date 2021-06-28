@@ -5,6 +5,8 @@ import {
 } from "react-bootstrap";
 import {useParams, withRouter} from "react-router-dom";
 const eventService = require('../services/eventService.js')
+const dateFormat = require('dateformat');
+
 
 export default function Event(props) {
   const { eventId } = useParams();
@@ -29,7 +31,8 @@ export default function Event(props) {
       } else {
         setName(data.performance.name)
         setDesc(data.performance.description)
-        setTime(data.startTime)
+        let startTime = new Date(data.startTime)
+        setTime(dateFormat(startTime, "yyyy-mm-dd h:MM:ss"))
         setVenue(data.venue.name)
         setZones(data.zones)
       }
