@@ -4,7 +4,7 @@ const APP_SERVICE_URL = 'http://localhost:8080'
 const getEvent = function (eventId, callback) {
   axios.get(`${APP_SERVICE_URL}/event/${eventId}`).then(
     (result) => {
-      callback(result.data, null);
+      callback(JSON.parse(result.data), null);
     })
     .catch((error) => {
       callback(null, error);
@@ -14,7 +14,7 @@ const getEvent = function (eventId, callback) {
 const getEvents = function (callback) {
   axios.get(`${APP_SERVICE_URL}/event`).then(
     (result) => {
-      callback(result.data, null);
+      callback(JSON.parse(result.data), null);
     })
     .catch((error) => {
       callback(null, error);
