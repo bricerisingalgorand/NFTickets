@@ -55,9 +55,6 @@ function App(props) {
         <Route path="/checkout">
           <Checkout />
         </Route>
-        {/* <Route exact path="/project/:projectId">
-          <Project />
-        </Route> */}
       </Switch>
     </Router>
   );

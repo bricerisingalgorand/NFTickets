@@ -42,11 +42,11 @@ export default function Browse(props) {
         {Array.from(events).map((event) => {
           return (
             <tr>
-              <td><a href={`/browse/${event.id}`}>{event['performance.name']}</a></td>
+              <td>{event['performance.name']}</td>
               <td>{event['venue.name']}</td>
               <td>{event.startTime}</td>
               <td>
-                <Button>Event Info</Button>
+                <Button href={`/browse/${event.id}`}>Event Info</Button>
               </td>
             </tr>
            )
