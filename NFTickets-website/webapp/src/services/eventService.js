@@ -44,7 +44,7 @@ const getEvents = function (callback) {
  */
 
 const createEvent = function (event, callback) {
-  axios.post(`${APP_SERVICE_URL}/event`, fund, {
+  axios.post(`${APP_SERVICE_URL}/event`, event, {
     headers: {
       'Content-Type': 'application/json'
     }

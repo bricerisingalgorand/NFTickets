@@ -3,20 +3,20 @@ import {
   Container,
   Table
 } from "react-bootstrap";
-const fundService = require('../services/fundService.js')
+const eventService = require('../services/eventService.js')
 
-export default function About(props) {
+export default function Browse(props) {
 
-  const [funds, setFunds] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     // call api to fetch details
     // projectId is the projectId
-    fundService.listFunds((data, err) => {
+    eventService.getEvents((data, err) => {
       if (err) {
         console.log(err)
       } else {
-        setFunds(data)
+        setEvents(data)
       }
     })
   }, []);
@@ -36,11 +36,12 @@ export default function About(props) {
         </tr>
         </thead>
         <tbody>
-        {funds.map((fund) => {
+        {events.map((event) => {
           return (
             <tr>
-              <td><a href={`/project/${fund.id}`}>{fund.name}</a></td>
-              <td>{`${fund.goalAmount} Algos`}</td>
+              <td><a href={`/browse/${event.id}`}>{event.performance.name}</a></td>
+              <td>{event.venue}</td>
+              <td>{event.startTime}</td>
             </tr>
            )
         })}

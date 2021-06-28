@@ -5,7 +5,7 @@ import {
 } from "react-bootstrap";
 const fundService = require('../services/fundService.js')
 
-export default function About(props) {
+export default function Register(props) {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [goal, setGoal] = useState("");

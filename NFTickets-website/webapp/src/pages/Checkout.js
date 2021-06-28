@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {
   Container, Col,
-  Button, Form
+  Button, Form, ButtonGroup, ToggleButton
 } from "react-bootstrap";
 const fundService = require('../services/fundService.js')
 
-export default function About(props) {
+export default function Checkout(props) {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [goal, setGoal] = useState("");
@@ -13,76 +13,52 @@ export default function About(props) {
   const [curr, setCurr] = useState("");
   const [acct, setAcct] = useState("");
   const [time, setTime] = useState("");
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
 
-  function onSubmit(e) {
-    e.preventDefault();
-    console.log(name, desc, goal, acct, time) // use these as fields
-    const fund = fundService.fundBuilder(name, desc, parseInt(time), parseInt(goal), acct);
-    fundService.createFund(fund, ()=>{});
-  }
+  const radios = [
+    { name: 'Active', value: '1' },
+    { name: 'Radio', value: '2' },
+    { name: 'Radio', value: '3' },
+  ];
 
   return (
-    <Container>
+    <Container className="d-flex flex-column align-items-center">
       <h1 className="pt-2" style={{textAlign: "center"}}>
-        Register an Event
+        Checkout
       </h1>
-      <Form onSubmit={onSubmit}>
+      <h2 style={{textAlign: "center"}}>
+          Order summary
+      </h2>
+      <h2 style={{textAlign: "center"}}>
+          Pay with PayString
+      </h2>
+      <Form>
         <Form.Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEventName">
-            <Form.Label>Event Name</Form.Label>
-            <Form.Control type="name" placeholder="Enter event name" />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridLocation">
-            <Form.Label>Event Location</Form.Label>
-            <Form.Control type="location" placeholder="Enter event location" />
+            <Form.Label>Your PayString</Form.Label>
+            <Form.Control type="email" placeholder="alice@example.com" />
           </Form.Group>
         </Form.Row>
-        <Form.Group controlId="desc">
-          <Form.Label>Description</Form.Label>
-          <Form.Control as="textarea" rows="3" onChange={(e) => setDesc(e.target.value)}/>
-        </Form.Group>
-        <Form.Row className="mb-3">
-          <Col>
-            <Form.Label>Event Start Date</Form.Label>
-            <Form.Control type="date" />
-          </Col>
-          <Col>
-            <Form.Label>Event End Date</Form.Label>
-            <Form.Control type="date" />
-          </Col>
-          <Col>
-            <Form.Label>Event Start Time</Form.Label>
-            <Form.Control type="time" />
-          </Col>
-          <Col>
-            <Form.Label>Event End Time</Form.Label>
-            <Form.Control type="time" />
-          </Col>
-        </Form.Row>
-        <Form.Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEventName">
-            <Form.Label>Ticket Details</Form.Label>
-            <Form.Control type="number" placeholder="Enter quantity" />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridLocation">
-            <Form.Label>Ticket Limit</Form.Label>
-            <Form.Control type="location" placeholder="Enter limit" />
-          </Form.Group>
-        </Form.Row>
-        <Form.Label>Ticket Details</Form.Label>
-        <Form.Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEventName">
-            <Form.Control type="number" placeholder="Enter row/zone" />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridLocation">
-            <Form.Control type="location" placeholder="Available seats" />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridLocation">
-            <Form.Control type="location" placeholder="Price (ALGO)" />
-          </Form.Group>
-        </Form.Row>
+        <ButtonGroup className="mb-2">
+            {radios.map((radio, idx) => (
+            <ToggleButton
+                key={idx}
+                id={`radio-${idx}`}
+                type="radio"
+                variant={idx % 2 ? 'outline-success' : 'outline-danger'}
+                name="radio"
+                value={radio.value}
+                checked={radioValue === radio.value}
+                onChange={(e) => setRadioValue(e.currentTarget.value)}
+            >
+                {radio.name}
+            </ToggleButton>
+            ))}
+        </ButtonGroup>
+        <br></br>
         <Button variant="primary" type="submit">
-          Create Event
+          Checkout via PayString
         </Button>
       </Form>
     </Container>
