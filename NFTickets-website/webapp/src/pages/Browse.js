@@ -43,9 +43,14 @@ export default function Browse(props) {
         {Array.from(events).map((event) => {
           return (
             <tr>
-              <td><a href={`/browse/${event.id}`}>{event['performance.name']}</a></td>
-              <td>{event.venue}</td>
+              <td>{event['performance.name']}</td>
+              <td>{event['venue.name']}</td>
               <td>{dateFormat(new Date(event.startTime), "yyyy-mm-dd h:MM:ss")}</td>
+              <td>
+                <Button href={`/browse/${event.id}`}>
+                  Event Info
+                </Button>
+              </td>
             </tr>
            )
         })}

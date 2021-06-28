@@ -66,21 +66,22 @@ export default function Register(props) {
           </Form.Group>
           <Form.Group as={Col} controlId="formGridLocation">
             <Form.Label>Ticket Limit</Form.Label>
-            <Form.Control type="location" placeholder="Enter limit" />
+            <Form.Control type="number" placeholder="Enter limit" />
           </Form.Group>
         </Form.Row>
         <Form.Label>Seating Details</Form.Label>
         <Form.Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEventName">
-            <Form.Control type="number" placeholder="Enter row/zone" />
+            <Form.Control type="string" placeholder="Enter Zone" />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridLocation">
-            <Form.Control type="location" placeholder="Available seats" />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridLocation">
-            <Form.Control type="location" placeholder="Price (ALGO)" />
+            <Form.Control type="number" placeholder="Price (ALGO)" />
           </Form.Group>
         </Form.Row>
+        <Form.Group controlId="desc">
+          <Form.Label>Seat Mapping</Form.Label>
+          <Form.Control as="textarea" rows="3" onChange={(e) => setDesc(e.target.value)}/>
+        </Form.Group>
         <Button variant="primary" type="submit">
           Create Event
         </Button>
