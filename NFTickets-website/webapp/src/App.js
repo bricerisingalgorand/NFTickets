@@ -42,12 +42,16 @@ function App(props) {
         <Route path="/register">
           <Register />
         </Route>
+        <Route exact path="/browse/:eventId">
+          <Event />
+        </Route>
         <Route path="/browse">
           <Browse />
         </Route>
         <Route path="/event">
           <Event />
         </Route>
+        
         <Route path="/checkout">
           <Checkout />
         </Route>

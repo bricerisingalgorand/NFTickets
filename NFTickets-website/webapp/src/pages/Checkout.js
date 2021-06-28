@@ -3,7 +3,7 @@ import {
   Container, Col,
   Button, Form, ButtonGroup, ToggleButton
 } from "react-bootstrap";
-const fundService = require('../services/fundService.js')
+const eventService = require('../services/eventService.js')
 
 export default function Checkout(props) {
   const [name, setName] = useState("");
@@ -17,9 +17,8 @@ export default function Checkout(props) {
   const [radioValue, setRadioValue] = useState('1');
 
   const radios = [
-    { name: 'Active', value: '1' },
-    { name: 'Radio', value: '2' },
-    { name: 'Radio', value: '3' },
+    { name: 'USDC', value: '1' },
+    { name: 'ALGO', value: '2' },
   ];
 
   return (
@@ -46,7 +45,7 @@ export default function Checkout(props) {
                 key={idx}
                 id={`radio-${idx}`}
                 type="radio"
-                variant={idx % 2 ? 'outline-success' : 'outline-danger'}
+                variant={idx % 2 ? 'outline-success' : 'outline-success'}
                 name="radio"
                 value={radio.value}
                 checked={radioValue === radio.value}

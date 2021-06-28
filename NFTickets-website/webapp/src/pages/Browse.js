@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {
   Container,
-  Table
+  Table,
+  Button
 } from "react-bootstrap";
 const eventService = require('../services/eventService.js')
 
@@ -34,6 +35,7 @@ export default function Browse(props) {
           <th>Event</th>
           <th>Location</th>
           <th>Date/Time</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -41,8 +43,11 @@ export default function Browse(props) {
           return (
             <tr>
               <td><a href={`/browse/${event.id}`}>{event['performance.name']}</a></td>
-              <td>{event.venue}</td>
+              <td>{event['venue.name']}</td>
               <td>{event.startTime}</td>
+              <td>
+                <Button>Event Info</Button>
+              </td>
             </tr>
            )
         })}

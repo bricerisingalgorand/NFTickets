@@ -28,11 +28,14 @@ export default function Event(props) {
         console.log(err)
       } else {
         console.log(data)
-        setName(data.performance.name)
-        setDesc(data.performance.description)
-        setTime(data.startTime)
-        setVenue(data.venue.name)
-        setZones(data.zones)
+        setName(data['performance.name'])
+        setDesc(data['performance.description'])
+        const epoch = data.startTime
+        const d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+        d.setUTCSeconds(epoch);
+        setTime(d)
+        setVenue(data['venue.name'])
+        setZones(data['zones'])
       }
     })
   });
@@ -65,11 +68,11 @@ export default function Event(props) {
         <Form.Label>Seating Details</Form.Label>
         <Form.Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEventName">
-                <Form.Control as="select" defaultValue="Select Zone...">
-                    {zones.map((zone) => {
+                {/* <Form.Control as="select" defaultValue="Select Zone...">
+                    {Array.from(zones).map((zone) => {
                         return <option>{zone}</option>
                     })}
-                </Form.Control>
+                </Form.Control> */}
             </Form.Group>
             <Form.Group as={Col} controlId="formGridLocation">
                 <Form.Control type="location" placeholder="Available seats" />
