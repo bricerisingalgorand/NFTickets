@@ -5,6 +5,7 @@ import {
   Button
 } from "react-bootstrap";
 const eventService = require('../services/eventService.js')
+const dateFormat = require('dateformat');
 
 export default function Browse(props) {
 
@@ -42,12 +43,9 @@ export default function Browse(props) {
         {Array.from(events).map((event) => {
           return (
             <tr>
-              <td>{event['performance.name']}</td>
-              <td>{event['venue.name']}</td>
-              <td>{event.startTime}</td>
-              <td>
-                <Button href={`/browse/${event.id}`}>Event Info</Button>
-              </td>
+              <td><a href={`/browse/${event.id}`}>{event['performance.name']}</a></td>
+              <td>{event.venue}</td>
+              <td>{dateFormat(new Date(event.startTime), "yyyy-mm-dd h:MM:ss")}</td>
             </tr>
            )
         })}

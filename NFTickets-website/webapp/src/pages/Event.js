@@ -5,6 +5,8 @@ import {
 } from "react-bootstrap";
 import {useParams, withRouter} from "react-router-dom";
 const eventService = require('../services/eventService.js')
+const dateFormat = require('dateformat');
+
 
 export default function Event(props) {
   const { eventId } = useParams();
@@ -27,15 +29,12 @@ export default function Event(props) {
       if (err) {
         console.log(err)
       } else {
-        console.log(data)
-        setName(data['performance.name'])
-        setDesc(data['performance.description'])
-        const epoch = data.startTime
-        const d = new Date(0); // The 0 there is the key, which sets the date to the epoch
-        d.setUTCSeconds(epoch);
-        setTime(d)
-        setVenue(data['venue.name'])
-        setZones(data['zones'])
+        setName(data.performance.name)
+        setDesc(data.performance.description)
+        let startTime = new Date(data.startTime)
+        setTime(dateFormat(startTime, "yyyy-mm-dd h:MM:ss"))
+        setVenue(data.venue.name)
+        setZones(data.zones)
       }
     })
   }, []);
