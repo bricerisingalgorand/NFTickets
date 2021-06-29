@@ -30,7 +30,6 @@ function App(props) {
           <Nav className="mr-auto">
             <Nav.Link href="/register">Register Events</Nav.Link>
             <Nav.Link href="/browse">Browse</Nav.Link>
-            <Nav.Link href="/Checkout">Checkout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -47,9 +46,6 @@ function App(props) {
         <Route path="/browse">
           <Browse />
         </Route>        
-        <Route path="/checkout">
-          <Checkout />
-        </Route>
       </Switch>
     </Router>
   );

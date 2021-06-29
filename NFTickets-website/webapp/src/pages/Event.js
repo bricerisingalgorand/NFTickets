@@ -21,11 +21,12 @@ export default function Event(props) {
   const [seats, setSeats] = useState([]);
   const [seat, setSeat] = useState("");
   const [price, setPrice] = useState("");
-  const [tickets, setTickets] = useState([])
+  const [tickets, setTickets] = useState([]);
+  const [payString, setPayString] = useState([]);
 
   function onSubmit(e) {
     e.preventDefault();
-    console.log(name, desc, startTime) // use these as fields
+    console.log(name, desc, startTime, payString) // use these as fields
   }
 
   useEffect(() => {
@@ -81,6 +82,7 @@ export default function Event(props) {
   }
 
   return (
+    <>
     <Container>
       <h1 className="pt-2" style={{textAlign: "center"}}>
         Event Details
@@ -101,14 +103,15 @@ export default function Event(props) {
             <p>{`End Time: ${endTime}`}</p>
         </Col>
       </Row>
-
-      <h3>Description</h3>
-      <p>{desc}</p>
+      <br/>
+      <h3 style={{textAlign: "center"}}>Description</h3>
+      <p style={{textAlign: "center"}}>{desc}</p>
       <Form onSubmit={onSubmit}>
+      <br/>
+      <h3 style={{textAlign: "center"}}>Select Your Seats</h3>
         {tickets.map((ticket, i) => {
           return(
             <>
-              <Form.Label>Seating Details</Form.Label>
               <Form.Row className="mb-3">
                   <Form.Group as={Col}>
                     <Form.Label>Select Zone</Form.Label>
@@ -139,6 +142,13 @@ export default function Event(props) {
           )
         })}
         <br />
+        <h5 style={{textAlign: "center"}}>Your PayString</h5>
+        <Form.Row >
+          <Form.Group as={Col} >
+            <Form.Control type="email" placeholder="alice@example.com" onChange={(e) => setPayString(e.target.value)}/>
+          </Form.Group>
+        </Form.Row>
+        <br/>
         <Form.Row className="d-flex justify-content-center">
           <Button variant="primary" type="submit">
             Checkout
@@ -146,5 +156,6 @@ export default function Event(props) {
         </Form.Row>
       </Form>
     </Container>
+    </>
   )
 }

@@ -117,10 +117,6 @@ export default function Register(props) {
             </>
           )
         })}
-        {/* <Form.Group controlId="desc">
-          <Form.Label>Seat Mapping</Form.Label>
-          <Form.Control as="textarea" rows="3" />
-        </Form.Group> */}
         <br/>
         <Form.Row className="d-flex justify-content-center">
           <Button variant="primary" type="submit">
