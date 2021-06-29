@@ -1,7 +1,6 @@
 package com.pago.core.quotes.dao.models;
 
 import lombok.Data;
-import org.hibernate.annotations.Formula;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;

@@ -79,7 +79,7 @@ public class EventContractFactory {
 
     }
 
-    public EventItem createEventContract(AlgodClient algodClient, EventItem event) throws EventResourceException {
+    public EventItem createEventContract(  EventItem event) throws EventResourceException {
 
         // Create the app create request
         AppCreateRequest appCreateRequest = appCreateEvent(event);

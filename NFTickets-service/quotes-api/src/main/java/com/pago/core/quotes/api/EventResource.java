@@ -14,7 +14,7 @@ public interface EventResource {
 
     @POST
     @Path("/")
-    public EventResponse save(EventRequest quote);
+    public EventResponse save(EventRequest quote)  ;
 
     @GET
     @Path("/")
@@ -28,4 +28,22 @@ public interface EventResource {
     @Path("/{id}")
     @Timed
     public EventResponse getEvent(@NotNull @PathParam("id") Long id);
+
+    @POST
+    @Path("/ticket/")
+    public TicketPurchaseResponse save(TicketPurchaseRequest ticketPurchaseRequest) ;
+
+    @GET
+    @Path("/ticket/")
+    @Timed
+    public Page<TicketPurchaseResponse> getTicketPurchaseList(
+            @QueryParam("ticket_purchase_account") String ticketPurchaseAccount,
+            @QueryParam("page_number") @DefaultValue("0") Integer pageNumber,
+            @QueryParam("page_size") @DefaultValue("10") Integer pageSize
+    );
+
+    @GET
+    @Path("/ticket/{id}")
+    @Timed
+    public TicketPurchaseResponse getTicketPurchase(@NotNull @PathParam("id") Long id);
 }
