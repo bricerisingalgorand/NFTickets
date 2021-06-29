@@ -28,6 +28,9 @@
             <column name="endtime" type="timestamp">
                 <constraints nullable="false"/>
             </column>
+            <column name="creator" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
         <createTable tableName="performance">
             <column name="eventid" type="bigint">

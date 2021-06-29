@@ -15,6 +15,7 @@ public class EventResponse {
     private PerformanceResponse performance;
     private VenueResponse venue;
     private List<ZoneResponse> zones;
+    private String creator;
 
     public EventResponse() {}
 }

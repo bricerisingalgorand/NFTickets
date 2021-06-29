@@ -13,6 +13,7 @@ public class EventRequest {
     private PerformanceRequest performance;
     private VenueRequest venue;
     private List<ZoneRequest> zones;
+    private String creator;
 
     public EventRequest() {}
 }
