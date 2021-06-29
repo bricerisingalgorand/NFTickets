@@ -1,3 +1,4 @@
+.DS_Store
 # java/maven files
 target
 dependency-reduced-pom.xml
