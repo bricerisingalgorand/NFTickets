@@ -90,19 +90,7 @@ const createEvent = function (event, callback) {
     });
 }
 
-// const eventBuilder = function (name, payString, description, venue, venueDesc, startTime, endTime, zones) {
-//   return JSONbig.stringify({
-//     createTime: Date.now(),
-//     startTime: new Date(startTime).toISOString(),
-//     endTime: new Date(endTime).toISOString(),
-//     performance: {name: name, description: description},
-//     venue: {name:venue, description: venueDesc},
-//     zones: zones,
-//     creatorPayString: payString,
-//   });
-// }
-
-const eventBuilder = function (name, description, venue, venueDesc, startTime, endTime, zones) {
+const eventBuilder = function (name, payString, description, venue, venueDesc, startTime, endTime, zones) {
   return JSONbig.stringify({
     createTime: Date.now(),
     startTime: new Date(startTime).toISOString(),
@@ -110,6 +98,7 @@ const eventBuilder = function (name, description, venue, venueDesc, startTime, e
     performance: {name: name, description: description},
     venue: {name:venue, description: venueDesc},
     zones: zones,
+    creatorPayString: payString,
   });
 }
 

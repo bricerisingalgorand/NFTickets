@@ -18,11 +18,7 @@ export default function Register(props) {
   function onSubmit(e) {
     e.preventDefault();
     // console.log(name, payString, desc, venue, venueDesc, startTime, endTime, zones) // use these as fields
-    console.log("start time:", startTime)
-    console.log("end time:", endTime)
-    // const event = eventService.eventBuilder(name, payString, desc, venue, venueDesc, startTime, endTime, zones);
-    const event = eventService.eventBuilder(name, desc, venue, venueDesc, startTime, endTime, zones);
-
+    const event = eventService.eventBuilder(name, payString, desc, venue, venueDesc, startTime, endTime, zones);
     eventService.createEvent(event, ()=>{});
     window.location.href = "http://localhost:3000/browse/"
   }

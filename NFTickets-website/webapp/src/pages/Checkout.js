@@ -33,29 +33,31 @@ export default function Checkout(props) {
           Pay with PayString
       </h2>
       <Form>
-        <Form.Row className="mb-3">
+        <h5 className="d-flex justify-content-center">Your PayString</h5>
+        <Form.Row className="d-flex justify-content-center">
           <Form.Group as={Col} controlId="formGridEventName">
-            <Form.Label>Your PayString</Form.Label>
             <Form.Control type="email" placeholder="alice@example.com" />
           </Form.Group>
         </Form.Row>
-        <ButtonGroup className="mb-2">
-            {radios.map((radio, idx) => (
-            <ToggleButton
-                key={idx}
-                id={`radio-${idx}`}
-                type="radio"
-                variant={idx % 2 ? 'outline-success' : 'outline-success'}
-                name="radio"
-                value={radio.value}
-                checked={radioValue === radio.value}
-                onChange={(e) => setRadioValue(e.currentTarget.value)}
-            >
-                {radio.name}
-            </ToggleButton>
-            ))}
-        </ButtonGroup>
-        <br></br>
+        <Form.Row className="d-flex justify-content-center">
+          <ButtonGroup className="mb-2">
+              {radios.map((radio, idx) => (
+              <ToggleButton
+                  key={idx}
+                  id={`radio-${idx}`}
+                  type="radio"
+                  variant={idx % 2 ? 'outline-success' : 'outline-success'}
+                  name="radio"
+                  value={radio.value}
+                  checked={radioValue === radio.value}
+                  onChange={(e) => setRadioValue(e.currentTarget.value)}
+              >
+                  {radio.name}
+              </ToggleButton>
+              ))}
+          </ButtonGroup>
+        </Form.Row>
+        <br />
         <Button variant="primary" type="submit">
           Checkout via PayString
         </Button>
