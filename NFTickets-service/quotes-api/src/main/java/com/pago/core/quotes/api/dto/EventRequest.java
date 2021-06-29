@@ -9,6 +9,7 @@ import java.util.List;
 public class EventRequest {
 
     private DateTime startTime;
+    private String eventOwnerAccount;
     private DateTime endTime;
     private PerformanceRequest performance;
     private VenueRequest venue;

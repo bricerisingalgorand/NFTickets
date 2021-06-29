@@ -9,6 +9,7 @@ import java.util.List;
 public class EventResponse {
 
     private Long id;
+    private String eventOwnerAccount;
     private DateTime createTime;
     private DateTime startTime;
     private DateTime endTime;
