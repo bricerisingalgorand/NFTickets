@@ -1,4 +1,4 @@
-#pragma version 2
+#pragma version 3
 int 0
 txn ApplicationID
 ==
@@ -381,37 +381,50 @@ app_global_put
 
 //need to store ticketnumber to local storage
 //this should allow 16 tickets per person
-//txna ApplicationArgs 0
-//byte "buy"
-//==
-///bz sell_dl
-//int 0 //sender
-//txn ApplicationID
-//load 50
-//app_local_get_ex
-//bnz failed_pop
-//int 0 //sender
-//load 50
-//int 1
-//app_local_put
-//int 1
-//return
-//sell_dl:
-//int 0 //sender
-//txn ApplicationID
-//load 50
-//app_local_get_ex
-//bz failed
-//int 0
-//load 50
-//app_local_del
-//int 1
-//return
-//delete these
+txna ApplicationArgs 0
+byte "buy"
+==
+global GroupSize
+int 2
+==
+&&
+gtxn 1 TypeEnum
+int pay
+==
+&&
+gtxn 1 Receiver
+global CreatorAddress
+==
+&&
+gtxn 1 Amount
+int 1000 // <------------- this is the price
+==
+assert
+bz sell_dl
+int 0 //sender
+txn ApplicationID
+load 50
+app_local_get_ex
+bnz failed_pop
+int 0 //sender
+load 50
+int 1
+app_local_put
 int 1
 return
-creation:
+sell_dl:
+int 0 //sender
+txn ApplicationID
+load 50
+app_local_get_ex
+bz failed
+int 0
+load 50
+app_local_del
+int 1
+return
 
+creation:
 int 1
 return
 finished:

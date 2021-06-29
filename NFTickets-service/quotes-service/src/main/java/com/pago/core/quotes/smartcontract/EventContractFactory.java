@@ -54,7 +54,7 @@ public class EventContractFactory {
     private final long globalBytes = 64L;
     private final long globalInts = 0L;
     private final long localBytes = 0L;
-    private final long localInts = 1L;
+    private final long localInts = 16L;
 
 
     @Inject
@@ -115,8 +115,8 @@ public class EventContractFactory {
             byte[] approvalProgram = loadResource(approvalProgramFile);
             byte[] closeProgram = loadResource(closeProgramFile);
 
-            String args = "int:" + event.getStartTime().getMillis() + ",int:" + event.getEndTime().getMillis() + ",int:" + event.getVenue().getTotalSeats() + ",addr:" + event.getEventOwnerAccount();
-            log.info("create event args: " + args);
+            /*String args = "int:" + event.getStartTime().getMillis() + ",int:" + event.getEndTime().getMillis() + ",int:" + event.getVenue().getTotalSeats() + ",addr:" + event.getEventOwnerAccount();
+            log.info("create event args: " + args);*/
 
             AgreementRequest agreementRequest = new AgreementRequest();
             agreementRequest.setDescription("agreement for create event " + event.getId());
@@ -127,7 +127,7 @@ public class EventContractFactory {
             appCreateRequest.setSender(event.getEventOwnerAccount());
             appCreateRequest.setFee(BigInteger.valueOf(1000));
             appCreateRequest.setLease("ac-"+event.getId());
-            appCreateRequest.setApplicationArgs(args);
+            appCreateRequest.setApplicationArgs("");
             appCreateRequest.setCreatorAddress(event.getEventOwnerAccount());
             appCreateRequest.setApprovalProgram(approvalProgram);
             appCreateRequest.setCloseProgram(closeProgram);

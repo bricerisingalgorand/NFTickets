@@ -13,6 +13,7 @@ public class TransactionGatewayModule extends AbstractModule {
     public TransactionGatewayClient transactionGatewayClient(SeedApplicationConfiguration configuration) {
         TransactionGatewayConfig txgwConfig = configuration.getTransactionGatewayConfig();
         return new TransactionGatewayClient(
+                txgwConfig.getProtocol(),
                 txgwConfig.getUrl(),
                 txgwConfig.getPort(),
                 txgwConfig.getToken()

@@ -12,9 +12,7 @@ database:
   url: jdbc:postgresql://localhost:5432/
 
 transactiongateway:
-  url:
-    localhost
-  port:
-    9050
-  token:
-    "test"
+  protocol: https://
+  url: transactiongateway.dev.pagoservices.com
+  port: 443
+  token: "test"

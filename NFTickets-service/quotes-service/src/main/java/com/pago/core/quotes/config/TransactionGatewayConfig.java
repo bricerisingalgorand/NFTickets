@@ -6,6 +6,8 @@ import lombok.Data;
 @Data
 public class TransactionGatewayConfig {
     @JsonProperty
+    private String protocol = "http://";
+    @JsonProperty
     private String url;
     @JsonProperty
     private int port;
