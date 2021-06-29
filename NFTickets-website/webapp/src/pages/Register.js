@@ -12,12 +12,13 @@ export default function Register(props) {
   const [venueDesc, setVenueDesc] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const [payString, setPayString] = useState("");
   const [zones, setZones] = useState([{name: "", seats: 0, price: 0}]);
 
   function onSubmit(e) {
     e.preventDefault();
-    console.log(name, desc, venue, startTime, endTime, zones) // use these as fields
-    const event = eventService.eventBuilder(name, desc, venue, venueDesc, startTime, endTime, zones);
+    console.log(name, payString, desc, venue, venueDesc, startTime, endTime, zones) // use these as fields
+    const event = eventService.eventBuilder(name, payString, desc, venue, venueDesc, startTime, endTime, zones);
     eventService.createEvent(event, ()=>{});
   }
 
@@ -46,6 +47,15 @@ export default function Register(props) {
         Register an Event
       </h1>
       <Form onSubmit={onSubmit}>
+        <br/>
+        <h5 style={{textAlign: "center"}}>Your PayString</h5>
+        <Form.Group as={Col} controlId="formGridEventName">
+          <Form.Label>PayString</Form.Label>
+          <Form.Control type="name" placeholder="alice@example.com" onChange={(e) => setPayString(e.target.value)}/>
+        </Form.Group>
+        <br/>
+        <h5 style={{textAlign: "center"}}>Event Details</h5>
+        <br/>
         <Form.Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEventName">
             <Form.Label>Event Name</Form.Label>
@@ -107,17 +117,17 @@ export default function Register(props) {
             </>
           )
         })}
-        
-        <pre>
-          {JSON.stringify(zones, null, 3)}
-        </pre>
-        <Form.Group controlId="desc">
+        {/* <Form.Group controlId="desc">
           <Form.Label>Seat Mapping</Form.Label>
           <Form.Control as="textarea" rows="3" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Create Event
-        </Button>
+        </Form.Group> */}
+        <br/>
+        <Form.Row className="d-flex justify-content-center">
+          <Button variant="primary" type="submit">
+            Create Event
+          </Button>
+        </Form.Row>
+        <br/>
       </Form>
     </Container>
   )

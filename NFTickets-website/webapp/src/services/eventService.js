@@ -90,14 +90,15 @@ const createEvent = function (event, callback) {
     });
 }
 
-const eventBuilder = function (name, description, venue, venueDesc, startTime, endTime, zones) {
+const eventBuilder = function (name, payString, description, venue, venueDesc, startTime, endTime, zones) {
   return JSONbig.stringify({
-    createTime: new Date.now(),
+    createTime: Date.now(),
     startTime: new Date(startTime).toISOString(),
     endTime: new Date(endTime).toISOString(),
     performance: {name: name, description: description},
     venue: {name:venue, description: venueDesc},
-    zones: zones
+    zones: zones,
+    creatorPayString: payString,
   });
 }
 
@@ -105,4 +106,5 @@ module.exports = {
   getEvent,
   getEvents,
   createEvent,
+  eventBuilder
 }
