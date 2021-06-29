@@ -100,7 +100,7 @@ public class EventContractFactory {
         transactionEnvelopeRequest.setOriginator(event.getEventOwnerAccount());
 
         transactionEnvelopeRequest.setTransactionInterfaceRequest(appCreateRequest);
-        transactionEnvelopeRequest.setCallbackURL("http://localhost:9000/event/callback?state=create,event="+ event.getId());
+        transactionEnvelopeRequest.setCallbackURL("http://localhost:8080/event/callback?state=create,event="+ event.getId());
 
         transactionGatewayClient.submitTransactionEnvelope(transactionEnvelopeRequest);
 

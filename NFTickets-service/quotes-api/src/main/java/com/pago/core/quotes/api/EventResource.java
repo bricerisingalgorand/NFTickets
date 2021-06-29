@@ -2,6 +2,7 @@ package com.pago.core.quotes.api;
 
 import com.codahale.metrics.annotation.Timed;
 import com.pago.core.quotes.api.dto.*;
+import com.pago.core.transactiongateway.api.transaction.dto.TransactionCallbackRequest;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
@@ -46,4 +47,11 @@ public interface EventResource {
     @Path("/ticket/{id}")
     @Timed
     public TicketPurchaseResponse getTicketPurchase(@NotNull @PathParam("id") Long id);
+
+    @POST
+    @Path("callback")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Timed
+    public TransactionCallbackResponse transactionCallback(TransactionCallbackRequest transactionCallbackRequest)  ;
 }

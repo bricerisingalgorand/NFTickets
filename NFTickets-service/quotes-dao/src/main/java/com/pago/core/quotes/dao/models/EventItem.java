@@ -28,6 +28,8 @@ public class EventItem {
     @NotNull
     @Column(name = "eventOwnerAccount")
     private String eventOwnerAccount;
+    @Column(name = "appId")
+    private Long appId;
 
     @Embedded
     private PerformanceItem performance;
@@ -43,4 +45,5 @@ public class EventItem {
     protected void onCreate() {
         createTime = DateTime.now();
     }
+
 }

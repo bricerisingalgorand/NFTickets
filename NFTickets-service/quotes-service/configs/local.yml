@@ -13,8 +13,8 @@ database:
 
 transactiongateway:
   url:
-    http://localhost
+    localhost
   port:
-    8050
+    9050
   token:
     "test"

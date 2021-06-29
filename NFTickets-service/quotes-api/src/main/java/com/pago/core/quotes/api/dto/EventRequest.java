@@ -15,5 +15,6 @@ public class EventRequest {
     private VenueRequest venue;
     private List<ZoneRequest> zones;
 
+
     public EventRequest() {}
 }

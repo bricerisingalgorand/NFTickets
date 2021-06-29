@@ -31,6 +31,9 @@
             <column name="endtime" type="timestamp">
                 <constraints nullable="false"/>
             </column>
+            <column name="appId" type="int">
+                <constraints nullable="true"/>
+            </column>
         </createTable>
         <createTable tableName="performance">
             <column name="eventid" type="bigint">
@@ -51,6 +54,9 @@
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="totalseats" type="int">
                 <constraints nullable="false"/>
             </column>
         </createTable>
