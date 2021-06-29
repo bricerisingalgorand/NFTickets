@@ -44,9 +44,9 @@ import java.math.BigInteger;
  */
 public class EventContractFactory {
 
-//    private final CrowdFundServiceImpl cfsImpl;
+
     public final static String EVENT_APPLICATION_ID = "NFTickets";
-    private final Logger log = LoggerFactory.getLogger(getClass());
+    private final Logger log = LoggerFactory.getLogger("EventContractFactory");
     private final MustacheFactory mf = new DefaultMustacheFactory();
 
     private final String approvalProgramFile = "bticketing.teal";
@@ -58,10 +58,10 @@ public class EventContractFactory {
 
 
     @Inject
-    public TransactionGatewayClient transactionGatewayClient;
+    private TransactionGatewayClient transactionGatewayClient;
 
     @Inject
-    public AlgodConfiguration algodConfiguration;
+    private AlgodConfiguration algodConfiguration;
 
 
     public String[] getHeaderNames() {
@@ -172,9 +172,6 @@ public class EventContractFactory {
             throw new EventResourceException(  message);
         }
     }
-
-
-
 
     public CompileResponse compileTealProgram(AlgodClient algodClient, byte[] file) throws EventResourceException {
         try {

@@ -11,3 +11,10 @@ database:
   password: mysecretpassword
   url: jdbc:postgresql://localhost:5432/
 
+transactiongateway:
+  url:
+    http://localhost
+  port:
+    8050
+  token:
+    "test"

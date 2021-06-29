@@ -5,12 +5,12 @@ import com.pago.core.quotes.api.EventResourceException;
 import com.pago.core.quotes.dao.models.TicketPurchase;
 import com.pago.core.transactiongateway.api.transaction.dto.*;
 import com.pago.core.transactiongateway.client.TransactionGatewayClient;
+import com.pago.core.quotes.config.AlgodConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigInteger;
-import java.util.Date;
-import java.util.UUID;
+
 
 /**
  ${gcmd} app call --app-id 1  --app-arg "str:buy" --app-arg "int:2000"  --from $ACCOUNT --out=dump1.dr --dryrun-dump

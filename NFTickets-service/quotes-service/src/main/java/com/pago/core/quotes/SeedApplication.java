@@ -6,6 +6,7 @@ import com.pago.core.quotes.dao.config.DaoBundle;
 import com.pago.core.quotes.dao.config.DaoModule;
 import com.pago.core.quotes.dao.config.SchemaBundle;
 import com.pago.core.quotes.module.HealthcheckModule;
+import com.pago.core.quotes.module.TransactionGatewayModule;
 import com.pago.core.quotes.service.ApplicationHealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
@@ -42,7 +43,8 @@ public class SeedApplication extends Application<SeedApplicationConfiguration> {
                 .modules(
                         new DaoModule(daoBundle),
                         new HealthcheckModule(),
-                        new DozerModule()
+                        new DozerModule(),
+                        new TransactionGatewayModule()
                 ).build()
         );
     }

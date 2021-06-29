@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 
 public class EventResourceImpl implements EventResource {
 
-    private final Logger log = LoggerFactory.getLogger(getClass().getName());
+    private final Logger log = LoggerFactory.getLogger("EventResourceImpl");
 
 
     @Inject

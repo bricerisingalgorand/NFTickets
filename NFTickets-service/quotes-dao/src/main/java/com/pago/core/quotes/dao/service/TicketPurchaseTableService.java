@@ -1,6 +1,5 @@
 package com.pago.core.quotes.dao.service;
 
-import com.pago.core.quotes.dao.models.EventItem;
 import com.pago.core.quotes.dao.models.TicketPurchase;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
