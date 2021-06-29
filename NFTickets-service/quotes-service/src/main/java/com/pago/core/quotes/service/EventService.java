@@ -16,7 +16,6 @@ public class EventService {
 
     public void save(EventItem event) {
         eventTableService.save(event);
-
     }
 
     public EventItem getEvent(Long id) {
