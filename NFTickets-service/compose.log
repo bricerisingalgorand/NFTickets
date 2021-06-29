@@ -1,0 +1,578 @@
+Attaching to nftickets-service_easy-cors_1, nftickets-service_swagger_1, nftickets-service_quotes_1, nftickets-service_bootstrap_1, nftickets-service_postgres_1
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:41,088] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:41,098] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:41,544] org.hibernate.Version: HHH000412: Hibernate ORM core version 1.0.0-SNAPSHOT
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:42,078] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.pago.core.quotes.dao.models.EventItem, com.pago.core.quotes.dao.models.PerformanceItem, com.pago.core.quotes.dao.models.VenueItem, com.pago.core.quotes.dao.models.ZoneItem]
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:42,132] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:42,766] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[35mquotes_1     |[0m WARNING: An illegal reflective access operation has occurred
+[35mquotes_1     |[0m WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/project/target/quotes-service.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+[35mquotes_1     |[0m WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+[35mquotes_1     |[0m WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[35mquotes_1     |[0m WARNING: All illegal access operations will be denied in a future release
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,411] org.dozer.config.GlobalSettings: Trying to find Dozer configuration file: dozer.properties
+[35mquotes_1     |[0m WARN  [2021-06-29 06:23:44,419] org.dozer.config.GlobalSettings: Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,429] org.dozer.DozerInitializer: Initializing Dozer. Version: 5.5.0, Thread Name: main
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,434] org.dozer.jmx.JMXPlatformImpl: Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,437] org.dozer.jmx.JMXPlatformImpl: Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,437] org.dozer.DozerBeanMapper: Initializing a new instance of dozer bean mapper.
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,532] io.dropwizard.server.ServerFactory: Starting quotes
+[35mquotes_1     |[0m ================================================================================
+[35mquotes_1     |[0m 
+[35mquotes_1     |[0m                               quotes
+[35mquotes_1     |[0m 
+[35mquotes_1     |[0m ================================================================================
+[35mquotes_1     |[0m 
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,720] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6d31f14{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,722] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@404009df{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:44,729] org.eclipse.jetty.server.Server: jetty-9.4.29.v20200521; built: 2020-05-21T17:20:40.598Z; git: 77c232aed8a45c818fd27232278d9f95a021095e; jvm 11.0.11+9
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:46,581] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+[35mquotes_1     |[0m 
+[35mquotes_1     |[0m     GET     /event/ (com.pago.core.quotes.api.EventResourceImpl)
+[35mquotes_1     |[0m     POST    /event/ (com.pago.core.quotes.api.EventResourceImpl)
+[35mquotes_1     |[0m     GET     /event/{id} (com.pago.core.quotes.api.EventResourceImpl)
+[35mquotes_1     |[0m     GET     /openapi.{type:json|yaml} (io.swagger.v3.jaxrs2.integration.resources.OpenApiResource)
+[35mquotes_1     |[0m     GET     /status (com.pago.core.quotes.api.StatusController)
+[35mquotes_1     |[0m 
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:46,584] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@7ca29311{Application context,/,null,AVAILABLE}
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:46,594] io.dropwizard.setup.AdminEnvironment: tasks = 
+[35mquotes_1     |[0m 
+[35mquotes_1     |[0m     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+[35mquotes_1     |[0m     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+[35mquotes_1     |[0m 
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:46,604] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@22f057b4{Admin context,/,null,AVAILABLE}
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:46,625] org.eclipse.jetty.server.AbstractConnector: Started application@6d31f14{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:46,630] org.eclipse.jetty.server.AbstractConnector: Started admin@404009df{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:46,630] org.eclipse.jetty.server.Server: Started @9797ms
+[35mquotes_1     |[0m INFO  [2021-06-29 06:23:50,158] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+[35mquotes_1     |[0m     107300 nanoseconds spent acquiring 1 JDBC connections;
+[35mquotes_1     |[0m     56400 nanoseconds spent releasing 1 JDBC connections;
+[35mquotes_1     |[0m     29321600 nanoseconds spent preparing 1 JDBC statements;
+[35mquotes_1     |[0m     5303200 nanoseconds spent executing 1 JDBC statements;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 JDBC batches;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C puts;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C hits;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C misses;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+[35mquotes_1     |[0m     47400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+[35mquotes_1     |[0m }
+[35mquotes_1     |[0m 172.23.0.6 - - [29/Jun/2021:06:23:50 +0000] "GET /event HTTP/1.0" 200 56 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" 606
+[35mquotes_1     |[0m INFO  [2021-06-29 06:24:15,245] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+[35mquotes_1     |[0m     109100 nanoseconds spent acquiring 1 JDBC connections;
+[35mquotes_1     |[0m     146600 nanoseconds spent releasing 1 JDBC connections;
+[35mquotes_1     |[0m     1156000 nanoseconds spent preparing 5 JDBC statements;
+[35mquotes_1     |[0m     3625300 nanoseconds spent executing 5 JDBC statements;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 JDBC batches;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C puts;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C hits;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C misses;
+[35mquotes_1     |[0m     17125400 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+[35mquotes_1     |[0m }
+[35mquotes_1     |[0m 172.23.0.6 - - [29/Jun/2021:06:24:15 +0000] "POST /event HTTP/1.0" 200 271 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" 337
+[35mquotes_1     |[0m INFO  [2021-06-29 06:24:20,213] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+[35mquotes_1     |[0m     93400 nanoseconds spent acquiring 1 JDBC connections;
+[35mquotes_1     |[0m     51300 nanoseconds spent releasing 1 JDBC connections;
+[35mquotes_1     |[0m     509200 nanoseconds spent preparing 2 JDBC statements;
+[35mquotes_1     |[0m     1970600 nanoseconds spent executing 2 JDBC statements;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 JDBC batches;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C puts;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C hits;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C misses;
+[35mquotes_1     |[0m     857600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+[35mquotes_1     |[0m     14200 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+[35mquotes_1     |[0m }
+[35mquotes_1     |[0m 172.23.0.6 - - [29/Jun/2021:06:24:20 +0000] "GET /event HTTP/1.0" 200 327 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" 65
+[35mquotes_1     |[0m WARN  [2021-06-29 06:25:37,244] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: SQL Error: 0, SQLState: 22001
+[35mquotes_1     |[0m ERROR [2021-06-29 06:25:37,245] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: ERROR: value too long for type character varying(255)
+[35mquotes_1     |[0m INFO  [2021-06-29 06:25:37,252] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+[35mquotes_1     |[0m     110000 nanoseconds spent acquiring 1 JDBC connections;
+[35mquotes_1     |[0m     47400 nanoseconds spent releasing 1 JDBC connections;
+[35mquotes_1     |[0m     484600 nanoseconds spent preparing 3 JDBC statements;
+[35mquotes_1     |[0m     12367000 nanoseconds spent executing 3 JDBC statements;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 JDBC batches;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C puts;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C hits;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C misses;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+[35mquotes_1     |[0m }
+[35mquotes_1     |[0m ERROR [2021-06-29 06:25:37,263] io.dropwizard.jersey.errors.LoggingExceptionMapper: Error handling a request: 6857dad0a3a9d0ea
+[35mquotes_1     |[0m ! org.postgresql.util.PSQLException: ERROR: value too long for type character varying(255)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2552)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2284)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:322)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:130)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[35mquotes_1     |[0m ! at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[35mquotes_1     |[0m ! at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+[35mquotes_1     |[0m ! at com.sun.proxy.$Proxy98.executeUpdate(Unknown Source)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+[35mquotes_1     |[0m ! ... 86 common frames omitted
+[35mquotes_1     |[0m ! Causing: org.hibernate.exception.DataException: could not execute statement
+[35mquotes_1     |[0m ! at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:115)
+[35mquotes_1     |[0m ! at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+[35mquotes_1     |[0m ! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3238)
+[35mquotes_1     |[0m ! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3742)
+[35mquotes_1     |[0m ! at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:194)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:179)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.performSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:100)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:75)
+[35mquotes_1     |[0m ! at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.fireSaveOrUpdate(SessionImpl.java:614)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:607)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:602)
+[35mquotes_1     |[0m ! at io.dropwizard.hibernate.AbstractDAO.persist(AbstractDAO.java:202)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.dao.service.EventTableService.save(EventTableService.java:17)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.service.EventService.save(EventService.java:18)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.api.EventResourceImpl.save(EventResourceImpl.java:23)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[35mquotes_1     |[0m ! at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:219)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:469)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:391)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:80)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:253)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:232)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:394)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:346)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:366)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:319)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+[35mquotes_1     |[0m ! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:50)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1631)
+[35mquotes_1     |[0m ! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:47)
+[35mquotes_1     |[0m ! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:41)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:89)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:121)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:133)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:549)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1369)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:489)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1284)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+[35mquotes_1     |[0m ! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:249)
+[35mquotes_1     |[0m ! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:717)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:54)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:173)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.Server.handle(Server.java:501)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:556)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:38,373] liquibase.executor.jvm.JdbcExecutor: SELECT COUNT(*) FROM public.databasechangeloglock
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:38,474] liquibase.executor.jvm.JdbcExecutor: CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:38,486] liquibase.executor.jvm.JdbcExecutor: SELECT COUNT(*) FROM public.databasechangeloglock
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:38,499] liquibase.executor.jvm.JdbcExecutor: DELETE FROM public.databasechangeloglock
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:38,507] liquibase.executor.jvm.JdbcExecutor: INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:38,521] liquibase.executor.jvm.JdbcExecutor: SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:38,567] liquibase.lockservice.StandardLockService: Successfully acquired change log lock
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:41,908] liquibase.changelog.StandardChangeLogHistoryService: Creating database history table with name: public.databasechangelog
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:41,911] liquibase.executor.jvm.JdbcExecutor: CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:41,922] liquibase.executor.jvm.JdbcExecutor: SELECT COUNT(*) FROM public.databasechangelog
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:41,925] liquibase.changelog.StandardChangeLogHistoryService: Reading from public.databasechangelog
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:41,926] liquibase.executor.jvm.JdbcExecutor: SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:41,935] liquibase.executor.jvm.JdbcExecutor: SELECT COUNT(*) FROM public.databasechangeloglock
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,027] liquibase.executor.jvm.JdbcExecutor: CREATE TABLE public.quotes (id BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, quote VARCHAR(255) NOT NULL, CONSTRAINT QUOTES_PKEY PRIMARY KEY (id))
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,033] liquibase.changelog.ChangeSet: Table quotes created
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,035] liquibase.executor.jvm.JdbcExecutor: CREATE TABLE public.events (id BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, createtime TIMESTAMP WITHOUT TIME ZONE NOT NULL, starttime TIMESTAMP WITHOUT TIME ZONE NOT NULL, endtime TIMESTAMP WITHOUT TIME ZONE NOT NULL, CONSTRAINT EVENTS_PKEY PRIMARY KEY (id))
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,041] liquibase.changelog.ChangeSet: Table events created
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,043] liquibase.executor.jvm.JdbcExecutor: CREATE TABLE public.performance (eventid BIGINT NOT NULL, name VARCHAR(255) NOT NULL, description VARCHAR(255) NOT NULL)
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,048] liquibase.changelog.ChangeSet: Table performance created
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,049] liquibase.executor.jvm.JdbcExecutor: CREATE TABLE public.venue (eventid BIGINT NOT NULL, name VARCHAR(255) NOT NULL, description VARCHAR(255) NOT NULL)
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,055] liquibase.changelog.ChangeSet: Table venue created
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,058] liquibase.executor.jvm.JdbcExecutor: CREATE TABLE public.zones (id BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, eventid BIGINT NOT NULL, name VARCHAR(255) NOT NULL, seats INTEGER NOT NULL, price BIGINT NOT NULL, CONSTRAINT ZONES_PKEY PRIMARY KEY (id))
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,062] liquibase.changelog.ChangeSet: Table zones created
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,065] liquibase.changelog.ChangeSet: ChangeSet migrations.xml::1::quote-service ran successfully in 39ms
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,067] liquibase.executor.jvm.JdbcExecutor: SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,070] liquibase.executor.jvm.JdbcExecutor: INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'quote-service', 'migrations.xml', NOW(), 1, '8:55e6ae565c5ab96bd091013c9e3a20d1', 'createTable tableName=quotes; createTable tableName=events; createTable tableName=performance; createTable tableName=venue; createTable tableName=zones', '', 'EXECUTED', NULL, NULL, '3.8.9', '4947821938')
+[36mbootstrap_1  |[0m INFO  [2021-06-29 06:23:42,077] liquibase.lockservice.StandardLockService: Successfully released change log lock
+[35mquotes_1     |[0m ! at java.base/java.lang.Thread.run(Thread.java:829)
+[35mquotes_1     |[0m 172.23.0.6 - - [29/Jun/2021:06:25:37 +0000] "POST /event HTTP/1.0" 500 110 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" 58
+[35mquotes_1     |[0m INFO  [2021-06-29 06:26:28,235] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+[35mquotes_1     |[0m     60000 nanoseconds spent acquiring 1 JDBC connections;
+[35mquotes_1     |[0m     62800 nanoseconds spent releasing 1 JDBC connections;
+[35mquotes_1     |[0m     163000 nanoseconds spent preparing 2 JDBC statements;
+[35mquotes_1     |[0m     1368900 nanoseconds spent executing 2 JDBC statements;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 JDBC batches;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C puts;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C hits;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C misses;
+[35mquotes_1     |[0m     265200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+[35mquotes_1     |[0m     13700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+[35mquotes_1     |[0m }
+[35mquotes_1     |[0m 172.23.0.6 - - [29/Jun/2021:06:26:28 +0000] "GET /event HTTP/1.0" 200 327 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" 18
+[35mquotes_1     |[0m WARN  [2021-06-29 06:27:38,334] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: SQL Error: 0, SQLState: 22001
+[35mquotes_1     |[0m ERROR [2021-06-29 06:27:38,335] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: ERROR: value too long for type character varying(255)
+[35mquotes_1     |[0m INFO  [2021-06-29 06:27:38,337] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+[35mquotes_1     |[0m     79300 nanoseconds spent acquiring 1 JDBC connections;
+[35mquotes_1     |[0m     57600 nanoseconds spent releasing 1 JDBC connections;
+[35mquotes_1     |[0m     797200 nanoseconds spent preparing 3 JDBC statements;
+[35mquotes_1     |[0m     2242800 nanoseconds spent executing 3 JDBC statements;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 JDBC batches;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C puts;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C hits;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C misses;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+[35mquotes_1     |[0m }
+[35mquotes_1     |[0m ERROR [2021-06-29 06:27:38,338] io.dropwizard.jersey.errors.LoggingExceptionMapper: Error handling a request: 470826fc381c0aac
+[35mquotes_1     |[0m ! org.postgresql.util.PSQLException: ERROR: value too long for type character varying(255)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2552)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2284)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:322)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:130)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[35mquotes_1     |[0m ! at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[35mquotes_1     |[0m ! at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+[35mquotes_1     |[0m ! at com.sun.proxy.$Proxy98.executeUpdate(Unknown Source)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+[35mquotes_1     |[0m ! ... 86 common frames omitted
+[35mquotes_1     |[0m ! Causing: org.hibernate.exception.DataException: could not execute statement
+[35mquotes_1     |[0m ! at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:115)
+[35mquotes_1     |[0m ! at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+[35mquotes_1     |[0m ! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3238)
+[35mquotes_1     |[0m ! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3742)
+[35mquotes_1     |[0m ! at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:194)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:179)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.performSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:100)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:75)
+[35mquotes_1     |[0m ! at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.fireSaveOrUpdate(SessionImpl.java:614)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:607)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:602)
+[35mquotes_1     |[0m ! at io.dropwizard.hibernate.AbstractDAO.persist(AbstractDAO.java:202)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.dao.service.EventTableService.save(EventTableService.java:17)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.service.EventService.save(EventService.java:18)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.api.EventResourceImpl.save(EventResourceImpl.java:23)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[35mquotes_1     |[0m ! at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:219)
+[32mpostgres_1   |[0m The files belonging to this database system will be owned by user "postgres".
+[32mpostgres_1   |[0m This user must also own the server process.
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m The database cluster will be initialized with locale "en_US.utf8".
+[32mpostgres_1   |[0m The default database encoding has accordingly been set to "UTF8".
+[32mpostgres_1   |[0m The default text search configuration will be set to "english".
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m Data page checksums are disabled.
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[32mpostgres_1   |[0m creating subdirectories ... ok
+[32mpostgres_1   |[0m selecting dynamic shared memory implementation ... posix
+[32mpostgres_1   |[0m selecting default max_connections ... 100
+[32mpostgres_1   |[0m selecting default shared_buffers ... 128MB
+[32mpostgres_1   |[0m selecting default time zone ... Etc/UTC
+[32mpostgres_1   |[0m creating configuration files ... ok
+[32mpostgres_1   |[0m running bootstrap script ... ok
+[32mpostgres_1   |[0m performing post-bootstrap initialization ... ok
+[32mpostgres_1   |[0m syncing data to disk ... ok
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m initdb: warning: enabling "trust" authentication for local connections
+[32mpostgres_1   |[0m You can change this by editing pg_hba.conf or using the option -A, or
+[32mpostgres_1   |[0m --auth-local and --auth-host, the next time you run initdb.
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m Success. You can now start the database server using:
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m waiting for server to start....2021-06-29 06:23:30.571 UTC [48] LOG:  starting PostgreSQL 13.3 (Debian 13.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.573 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.578 UTC [49] LOG:  database system was shut down at 2021-06-29 06:23:30 UTC
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.582 UTC [48] LOG:  database system is ready to accept connections
+[32mpostgres_1   |[0m  done
+[32mpostgres_1   |[0m server started
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m waiting for server to shut down...2021-06-29 06:23:30.741 UTC [48] LOG:  received fast shutdown request
+[32mpostgres_1   |[0m .2021-06-29 06:23:30.743 UTC [48] LOG:  aborting any active transactions
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.744 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.744 UTC [50] LOG:  shutting down
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.757 UTC [48] LOG:  database system is shut down
+[32mpostgres_1   |[0m  done
+[32mpostgres_1   |[0m server stopped
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m PostgreSQL init process complete; ready for start up.
+[32mpostgres_1   |[0m 
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.860 UTC [1] LOG:  starting PostgreSQL 13.3 (Debian 13.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.860 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.860 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.863 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.867 UTC [67] LOG:  database system was shut down at 2021-06-29 06:23:30 UTC
+[32mpostgres_1   |[0m 2021-06-29 06:23:30.871 UTC [1] LOG:  database system is ready to accept connections
+[32mpostgres_1   |[0m 2021-06-29 06:23:38.386 UTC [74] ERROR:  relation "public.databasechangeloglock" does not exist at character 22
+[32mpostgres_1   |[0m 2021-06-29 06:23:38.386 UTC [74] STATEMENT:  SELECT COUNT(*) FROM public.databasechangeloglock
+[32mpostgres_1   |[0m 2021-06-29 06:25:37.238 UTC [84] ERROR:  value too long for type character varying(255)
+[32mpostgres_1   |[0m 2021-06-29 06:25:37.238 UTC [84] STATEMENT:  /* insert com.pago.core.quotes.dao.models.EventItem */ insert into performance (description, name, eventid) values ($1, $2, $3)
+[32mpostgres_1   |[0m 2021-06-29 06:27:38.334 UTC [84] ERROR:  value too long for type character varying(255)
+[32mpostgres_1   |[0m 2021-06-29 06:27:38.334 UTC [84] STATEMENT:  /* insert com.pago.core.quotes.dao.models.EventItem */ insert into performance (description, name, eventid) values ($1, $2, $3)
+[32mpostgres_1   |[0m 2021-06-29 06:27:42.053 UTC [84] ERROR:  value too long for type character varying(255)
+[32mpostgres_1   |[0m 2021-06-29 06:27:42.053 UTC [84] STATEMENT:  /* insert com.pago.core.quotes.dao.models.EventItem */ insert into performance (description, name, eventid) values ($1, $2, $3)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:469)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:391)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:80)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:253)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:232)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:394)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:346)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:366)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:319)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+[35mquotes_1     |[0m ! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:50)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1631)
+[35mquotes_1     |[0m ! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:47)
+[35mquotes_1     |[0m ! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:41)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:89)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:121)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:133)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:549)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1369)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:489)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1284)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+[35mquotes_1     |[0m ! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:249)
+[35mquotes_1     |[0m ! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:717)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:54)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:173)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.Server.handle(Server.java:501)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:556)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+[35mquotes_1     |[0m ! at java.base/java.lang.Thread.run(Thread.java:829)
+[35mquotes_1     |[0m 172.23.0.6 - - [29/Jun/2021:06:27:38 +0000] "POST /event HTTP/1.0" 500 110 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" 17
+[35mquotes_1     |[0m WARN  [2021-06-29 06:27:42,054] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: SQL Error: 0, SQLState: 22001
+[35mquotes_1     |[0m ERROR [2021-06-29 06:27:42,054] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: ERROR: value too long for type character varying(255)
+[35mquotes_1     |[0m INFO  [2021-06-29 06:27:42,055] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+[35mquotes_1     |[0m     60200 nanoseconds spent acquiring 1 JDBC connections;
+[35mquotes_1     |[0m     36500 nanoseconds spent releasing 1 JDBC connections;
+[35mquotes_1     |[0m     307700 nanoseconds spent preparing 3 JDBC statements;
+[35mquotes_1     |[0m     2975100 nanoseconds spent executing 3 JDBC statements;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 JDBC batches;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C puts;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C hits;
+[35mquotes_1     |[0m     0 nanoseconds spent performing 0 L2C misses;
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+[35mquotes_1     |[0m     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+[35mquotes_1     |[0m }
+[35mquotes_1     |[0m ERROR [2021-06-29 06:27:42,056] io.dropwizard.jersey.errors.LoggingExceptionMapper: Error handling a request: f7d513070d5f72f5
+[35mquotes_1     |[0m ! org.postgresql.util.PSQLException: ERROR: value too long for type character varying(255)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2552)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2284)
+[35mquotes_1     |[0m ! at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:322)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+[35mquotes_1     |[0m ! at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:130)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[35mquotes_1     |[0m ! at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[35mquotes_1     |[0m ! at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+[35mquotes_1     |[0m ! at com.sun.proxy.$Proxy98.executeUpdate(Unknown Source)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+[35mquotes_1     |[0m ! ... 91 common frames omitted
+[35mquotes_1     |[0m ! Causing: org.hibernate.exception.DataException: could not execute statement
+[35mquotes_1     |[0m ! at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:115)
+[35mquotes_1     |[0m ! at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+[35mquotes_1     |[0m ! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+[35mquotes_1     |[0m ! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3238)
+[35mquotes_1     |[0m ! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3742)
+[35mquotes_1     |[0m ! at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+[35mquotes_1     |[0m ! at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:194)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:179)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.performSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:100)
+[35mquotes_1     |[0m ! at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:75)
+[35mquotes_1     |[0m ! at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.fireSaveOrUpdate(SessionImpl.java:614)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:607)
+[35mquotes_1     |[0m ! at org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:602)
+[35mquotes_1     |[0m ! at io.dropwizard.hibernate.AbstractDAO.persist(AbstractDAO.java:202)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.dao.service.EventTableService.save(EventTableService.java:17)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.service.EventService.save(EventService.java:18)
+[35mquotes_1     |[0m ! at com.pago.core.quotes.api.EventResourceImpl.save(EventResourceImpl.java:23)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[35mquotes_1     |[0m ! at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[35mquotes_1     |[0m ! at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:219)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:469)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:391)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:80)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:253)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:232)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:394)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:346)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:366)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:319)
+[35mquotes_1     |[0m ! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+[35mquotes_1     |[0m ! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:50)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1631)
+[35mquotes_1     |[0m ! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:47)
+[35mquotes_1     |[0m ! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:41)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:89)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:121)
+[35mquotes_1     |[0m ! at com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:133)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1618)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:549)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1369)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:489)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1284)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+[35mquotes_1     |[0m ! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:249)
+[35mquotes_1     |[0m ! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:717)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:54)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:173)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.Server.handle(Server.java:501)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:556)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+[35mquotes_1     |[0m ! at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+[35mquotes_1     |[0m ! at java.base/java.lang.Thread.run(Thread.java:829)
+[35mquotes_1     |[0m 172.23.0.6 - - [29/Jun/2021:06:27:42 +0000] "POST /event HTTP/1.0" 500 110 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" 26
+[33measy-cors_1  |[0m /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+[33measy-cors_1  |[0m /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+[33measy-cors_1  |[0m /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+[33measy-cors_1  |[0m 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+[33measy-cors_1  |[0m 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+[33measy-cors_1  |[0m /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+[33measy-cors_1  |[0m 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/default.conf.template to /etc/nginx/conf.d/default.conf
+[33measy-cors_1  |[0m /docker-entrypoint.sh: Configuration complete; ready for start up
+[33measy-cors_1  |[0m 172.23.0.1 - - [29/Jun/2021:06:23:50 +0000] "GET /event HTTP/1.1" 200 56 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" "-"
+[33measy-cors_1  |[0m 172.23.0.1 - - [29/Jun/2021:06:24:15 +0000] "POST /event HTTP/1.1" 200 271 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" "-"
+[33measy-cors_1  |[0m 172.23.0.1 - - [29/Jun/2021:06:24:20 +0000] "GET /event HTTP/1.1" 200 202 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" "-"
+[33measy-cors_1  |[0m 172.23.0.1 - - [29/Jun/2021:06:25:37 +0000] "POST /event HTTP/1.1" 500 110 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" "-"
+[33measy-cors_1  |[0m 172.23.0.1 - - [29/Jun/2021:06:26:28 +0000] "GET /event HTTP/1.1" 200 199 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" "-"
+[33measy-cors_1  |[0m 172.23.0.1 - - [29/Jun/2021:06:27:38 +0000] "POST /event HTTP/1.1" 500 110 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" "-"
+[33measy-cors_1  |[0m 172.23.0.1 - - [29/Jun/2021:06:27:42 +0000] "POST /event HTTP/1.1" 500 110 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" "-"

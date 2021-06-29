@@ -17,9 +17,14 @@ export default function Register(props) {
 
   function onSubmit(e) {
     e.preventDefault();
-    console.log(name, payString, desc, venue, venueDesc, startTime, endTime, zones) // use these as fields
-    const event = eventService.eventBuilder(name, payString, desc, venue, venueDesc, startTime, endTime, zones);
+    // console.log(name, payString, desc, venue, venueDesc, startTime, endTime, zones) // use these as fields
+    console.log("start time:", startTime)
+    console.log("end time:", endTime)
+    // const event = eventService.eventBuilder(name, payString, desc, venue, venueDesc, startTime, endTime, zones);
+    const event = eventService.eventBuilder(name, desc, venue, venueDesc, startTime, endTime, zones);
+
     eventService.createEvent(event, ()=>{});
+    window.location.href = "http://localhost:3000/browse/"
   }
 
   const handleInputChange = (e, index) => {
@@ -37,7 +42,6 @@ export default function Register(props) {
   };
 
   function handleAddZone() {
-    console.log("Test")
     setZones([...zones, {name: "", seats: 0, price: 0}]);
   }
 
@@ -99,11 +103,11 @@ export default function Register(props) {
             <Form.Row className="mb-3" xs="auto">
               <Form.Group as={Col} controlId="formGridEventName">
                 <Form.Label>Zone</Form.Label>
-                <Form.Control type="string" placeholder="Enter Zone" name="name" value={zone.zone} onChange={(e) => handleInputChange(e, i)}/>
+                <Form.Control type="string" placeholder="Enter Zone" name="name" value={zone.name} onChange={(e) => handleInputChange(e, i)}/>
               </Form.Group>
               <Form.Group as={Col} controlId="formGridEventName">
                 <Form.Label>Seat Amount</Form.Label>
-                <Form.Control type="number" placeholder="Enter Quantity" name="seats" value={zone.quantity} onChange={(e) => handleInputChange(e, i)}/>
+                <Form.Control type="number" placeholder="Enter Quantity" name="seats" value={zone.seats} onChange={(e) => handleInputChange(e, i)}/>
               </Form.Group>
               <Form.Group as={Col} controlId="formGridLocation">
                 <Form.Label>Price (ALGO)</Form.Label>
