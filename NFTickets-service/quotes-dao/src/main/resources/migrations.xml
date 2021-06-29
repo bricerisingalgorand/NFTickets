@@ -31,7 +31,7 @@
             <column name="endtime" type="timestamp">
                 <constraints nullable="false"/>
             </column>
-            <column name="appId" type="int">
+            <column name="appid" type="int">
                 <constraints nullable="true"/>
             </column>
         </createTable>
