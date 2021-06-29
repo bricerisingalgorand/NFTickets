@@ -51,9 +51,9 @@ public class EventContractFactory {
 
     private final String approvalProgramFile = "bticketing.teal";
     private final String closeProgramFile = "clear.teal";
-    private final long globalBytes = 64L;
-    private final long globalInts = 0L;
-    private final long localBytes = 0L;
+    private final long globalBytes = 16L;
+    private final long globalInts = 16L;
+    private final long localBytes = 16L;
     private final long localInts = 16L;
 
 
@@ -132,8 +132,8 @@ public class EventContractFactory {
             appCreateRequest.setApprovalProgram(approvalProgram);
             appCreateRequest.setCloseProgram(closeProgram);
             appCreateRequest.setGlobalBytes(globalBytes);
-            appCreateRequest.setLocalBytes(localBytes);
-            appCreateRequest.setGlobalInts(globalInts);
+            //appCreateRequest.setLocalBytes(localBytes);
+            //ppCreateRequest.setGlobalInts(globalInts);
             appCreateRequest.setLocalInts(localInts);
             appCreateRequest.setAgreementRequest(agreementRequest);
 
