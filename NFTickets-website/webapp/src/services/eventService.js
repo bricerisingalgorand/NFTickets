@@ -90,7 +90,7 @@ const createEvent = function (event, callback) {
     });
 }
 
-const eventBuilder = function (name, description, venue, venueDesc, startTime, endTime, ticketDetail, ticketLimit, zones) {
+const eventBuilder = function (name, description, venue, venueDesc, startTime, endTime, zones) {
   return JSONbig.stringify({
     createTime: new Date.now(),
     startTime: new Date(startTime).toISOString(),
