@@ -11,6 +11,7 @@ import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.MustacheFactory;
 import com.google.inject.Inject;
 import com.pago.core.quotes.api.EventResourceException;
+import com.pago.core.quotes.config.AlgodConfiguration;
 import com.pago.core.quotes.dao.models.EventItem;
 import com.pago.core.transactiongateway.api.transaction.dto.*;
 import com.pago.core.transactiongateway.client.TransactionGatewayClient;
