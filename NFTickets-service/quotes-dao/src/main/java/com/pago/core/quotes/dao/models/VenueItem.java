@@ -14,6 +14,9 @@ public class VenueItem {
     @NotNull
     @Column(name = "description", table = "venue")
     private String description;
+    @NotNull
+    @Column(name = "totalSeats", table = "venue")
+    private int totalSeats;
 
     public VenueItem() {}
 }

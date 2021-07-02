@@ -23,8 +23,24 @@ public class SeedApplicationConfiguration extends Configuration implements DaoCo
     @JsonProperty("dozer")
     DozerConfiguration dozerConfiguration;
 
+    @Valid
+    @JsonProperty("transactiongateway")
+    TransactionGatewayConfig transactionGatewayConfig;
+
+    @Valid
+    @JsonProperty("algod")
+    AlgodConfiguration algodConfiguration;
+
     public DataSourceFactory getDataSourceFactory() {
         return database;
+    }
+
+    public AlgodConfiguration algodConfiguration() {
+        return algodConfiguration;
+    }
+
+    public TransactionGatewayConfig getTransactionGatewayConfig() {
+        return transactionGatewayConfig;
     }
 
     public SwaggerDetailsConfiguration getSwaggerConfiguration() {

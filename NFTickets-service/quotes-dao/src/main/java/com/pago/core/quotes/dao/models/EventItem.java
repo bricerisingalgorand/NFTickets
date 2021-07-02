@@ -1,7 +1,6 @@
 package com.pago.core.quotes.dao.models;
 
 import lombok.Data;
-import org.hibernate.annotations.Formula;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
@@ -26,6 +25,11 @@ public class EventItem {
     @NotNull
     @Column(name = "endTime")
     private DateTime endTime;
+    @NotNull
+    @Column(name = "eventOwnerAccount")
+    private String eventOwnerAccount;
+    @Column(name = "appId")
+    private Long appId;
 
     @Embedded
     private PerformanceItem performance;
@@ -41,4 +45,5 @@ public class EventItem {
     protected void onCreate() {
         createTime = DateTime.now();
     }
+
 }

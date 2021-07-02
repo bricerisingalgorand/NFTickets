@@ -19,6 +19,9 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="eventowneraccount" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
             <column name="createtime" type="timestamp">
                 <constraints nullable="false"/>
             </column>
@@ -27,6 +30,9 @@
             </column>
             <column name="endtime" type="timestamp">
                 <constraints nullable="false"/>
+            </column>
+            <column name="appid" type="int">
+                <constraints nullable="true"/>
             </column>
         </createTable>
         <createTable tableName="performance">
@@ -48,6 +54,9 @@
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="totalseats" type="int">
                 <constraints nullable="false"/>
             </column>
         </createTable>
